@@ -1,10 +1,10 @@
 # TarosynBrand
 
-The independent corporate entry landing page for **Tarosyn**.
+The independent static extraction of Tarosyn's existing public **Guest Onboarding** landing page.
 
 ## Purpose
 
-This repository is intentionally a self-contained static site. It does not import the Tarosyn application, make API requests, or depend on application-server availability. The only application dependency is a user-initiated outbound link to `https://tarosyn.app`.
+This repository is intentionally a self-contained static site. It faithfully carries the current Tarosyn Guest Onboarding landing content and visual hierarchy, but does not import the Tarosyn application, make API requests, or depend on application-server availability. Entry and returning-seeker actions are deliberate outbound links to `https://tarosyn.app`.
 
 Deploy this repository directly to the static host used by `tarosyn.com` so the brand and entry experience remain online when the application is unavailable.
 
