@@ -11,6 +11,8 @@ Deploy this repository directly to the static host used by `tarosyn.com` so the 
 ## Files
 
 - `index.html` — static corporate/brand landing page
+- `project.html` — public living project record: charter, product focus, priorities, and accountability rules
+- `project.css` — styles for the public project record
 - `styles.css` — all styling; no build required
 - `script.js` — mobile navigation only
 - `assets/` — local Tarosyn brand assets copied from the app's public asset library
