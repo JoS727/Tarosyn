@@ -1,0 +1,50 @@
+name: Build
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Install and build
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -f package.json ]]; then
+            if [[ -f pnpm-lock.yaml ]]; then
+              corepack enable
+              pnpm install --frozen-lockfile
+              pnpm run build --if-present
+            elif [[ -f package-lock.json ]]; then
+              npm ci
+              npm run build --if-present
+            else
+              npm install
+              npm run build --if-present
+            fi
+          elif [[ -f index.html ]]; then
+            python3 - <<"PY"
+            from pathlib import Path
+            page = Path("index.html").read_text(encoding="utf-8")
+            assert "<html" in page.lower(), "index.html has no html root element"
+            assert "</html>" in page.lower(), "index.html has no closing html tag"
+            print("Static site markup check passed.")
+            PY
+          else
+            echo "No application build manifest is present yet; checkout verified."
+          fi
