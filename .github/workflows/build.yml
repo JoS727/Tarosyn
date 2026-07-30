@@ -36,13 +36,7 @@ jobs:
               npm run build --if-present
             fi
           elif [[ -f index.html ]]; then
-            python3 - <<"PY"
-            from pathlib import Path
-            page = Path("index.html").read_text(encoding="utf-8")
-            assert "<html" in page.lower(), "index.html has no html root element"
-            assert "</html>" in page.lower(), "index.html has no closing html tag"
-            print("Static site markup check passed.")
-            PY
+            python3 -c 'from pathlib import Path; page = Path("index.html").read_text(encoding="utf-8"); assert "<html" in page.lower() and "</html>" in page.lower(); print("Static site markup check passed.")'
           else
             echo "No application build manifest is present yet; checkout verified."
           fi
