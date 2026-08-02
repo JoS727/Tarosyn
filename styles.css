@@ -11,12 +11,21 @@
 .primary,.secondary{display:flex;justify-content:center;align-items:center;width:100%;min-height:52px;border-radius:8px;font-size:1rem;font-weight:700;transition:.2s;cursor:pointer}.primary{background:linear-gradient(90deg,#6f28d8,#8b5af7);border:1px solid #c7a9ff66;box-shadow:0 12px 30px #7a2ee455}.primary:hover{filter:brightness(1.14);transform:translateY(-1px)}.secondary{background:#0008;border:1px solid #b99aff8c;color:#e6d9ff}.secondary:hover{background:#31145c88}
 .scroll{position:absolute;z-index:1;bottom:14px;left:calc(50% - 18px);width:36px;height:36px;text-align:center;color:#c9a7ff99;font-size:2rem;line-height:27px}
 
-/* ─── SHOWCASE (Tarotfication split: phone → card) ─── */
+/* ─── SHOWCASE (Tarotfication split: phone → card + copy) ─── */
 .showcase{padding:80px 20px 100px;background:linear-gradient(#000,#0d041a,#000)}
-.showcase .inner.showcase-split{max-width:1000px;margin:auto;display:flex;align-items:center;justify-content:center;gap:40px}
+.showcase .inner.showcase-layout{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:40px}
+.showcase .inner.showcase-copy{max-width:800px;margin:48px auto 0;text-align:center;display:flex;flex-direction:column;align-items:center;gap:20px}
+.showcase-headline{margin:0;font:700 clamp(1.8rem,4vw,2.6rem)/1.1 var(--serif);background:linear-gradient(#fff,#e4d4ff);background-clip:text;color:transparent}
+.showcase-desc{margin:0;color:#decaffcc;font-size:1.05rem;line-height:1.5}
+.showcase-features{display:flex;gap:32px;flex-wrap:wrap;justify-content:center}
+.showcase-feat{display:flex;align-items:center;gap:8px;color:#d4a24a;font-size:.85rem;line-height:1.3;text-align:left}
+.feat-icon{font-size:1.4rem}
+.showcase-cta{width:auto;padding:0 40px;min-height:52px;margin-top:8px}
+.showcase-benefits{display:flex;flex-wrap:wrap;gap:16px 28px;justify-content:center;margin-top:12px}
+.showcase-benefits span{color:#b99affaa;font-size:.78rem;letter-spacing:.02em}
 
 /* Phone mockup */
-.showcase-phone{flex-shrink:0}
+.showcase-left{flex-shrink:0}
 .phone-frame{width:260px;background:#1a0e24;border-radius:36px;border:3px solid #3a2550;padding:16px 14px 20px;box-shadow:0 30px 60px #000a,0 0 40px #7b4a9e22;position:relative}
 .phone-notch{width:80px;height:6px;background:#2c2033;border-radius:4px;margin:0 auto 18px}
 .phone-screen{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px}
@@ -28,22 +37,24 @@
 .phone-btn:hover{filter:brightness(1.15);transform:translateY(-1px)}
 
 /* Arrow */
-.showcase-arrow{flex-shrink:0;filter:drop-shadow(0 0 10px #d060ff88)}
-.showcase-arrow svg{display:block}
+.showcase-center{flex-shrink:0;filter:drop-shadow(0 0 10px #d060ff88)}
+.showcase-arrow-svg{display:block}
 
 /* Card */
-.showcase-card{flex-shrink:0}
+.showcase-right{flex-shrink:0}
 .showcase-card-img{width:300px;height:auto;border-radius:18px;box-shadow:0 30px 80px #3d176988,0 0 30px #d060ff22}
 
 /* Mobile showcase */
 @media(max-width:780px){
   .showcase{padding:50px 16px 60px}
-  .showcase .inner.showcase-split{flex-direction:column;gap:24px}
+  .showcase .inner.showcase-layout{flex-direction:column;gap:24px}
   .phone-frame{width:220px}
   .phone-headline{font-size:.95rem}
   .phone-photo-placeholder{width:120px;height:150px}
-  .showcase-arrow{transform:rotate(90deg)}
+  .showcase-center{transform:rotate(90deg)}
   .showcase-card-img{width:240px}
+  .showcase-features{gap:18px}
+  .showcase-benefits{flex-direction:column;gap:10px}
 }
 
 /* ─── STORY SECTIONS ─── */
