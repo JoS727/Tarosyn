@@ -120,12 +120,20 @@ footer{border-top:1px solid var(--line);padding:50px max(20px,calc((100vw - 1150
   .hero-content{width:calc(100% - 32px);margin:0 auto;padding:28px 18px 5px;background:linear-gradient(180deg,#140927f2,#050208);border:1px solid #9d69ed46;border-top:0;border-radius:0 0 14px 14px;box-shadow:0 20px 40px #000b}
   .scroll{display:none}
   .showcase{padding:40px 12px 60px}
-  .showcase .inner.showcase-grid{grid-template-columns:1fr;gap:32px}
+  .showcase .inner.showcase-grid{grid-template-columns:1fr;gap:24px}
   .showcase-left{justify-self:center}
+  .showcase-center{justify-self:center}
   .showcase-right{align-items:center;text-align:center;padding-left:0}
   .showcase-cta{align-self:center}
   .showcase-benefits{flex-direction:column;align-items:center;gap:14px}
-  .phone-frame{transform:none}
+  .phone-frame{width:180px;transform:none}
+  .phone-photo{width:90px;height:112px}
+  .phone-headline{font-size:.82rem}
+  .phone-sub{font-size:.62rem}
+  .phone-btn{font-size:.58rem;padding:8px}
+  .phone-nav span{font-size:.4rem}
+  .showcase-card-img{width:220px;max-width:100%}
+  .showcase-headline{font-size:1.5rem}
   .story,.story.reverse{flex-direction:column;padding:68px 25px;gap:38px}
   .story-copy{width:100%}
   .card{width:190px;height:275px}
@@ -144,6 +152,8 @@ footer{border-top:1px solid var(--line);padding:50px max(20px,calc((100vw - 1150
   .footer-grid{grid-template-columns:1fr}
   .footer-grid>div:first-child{grid-column:auto}
   .hero-content{width:calc(100% - 40px)}
-  .showcase-card-img{width:200px}
-  .showcase-headline{font-size:1.4rem}
+  .showcase-card-img{width:180px}
+  .showcase-headline{font-size:1.3rem}
+  .phone-frame{width:160px}
+  .phone-photo{width:80px;height:100px}
 }
