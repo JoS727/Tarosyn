@@ -78,7 +78,13 @@
 .email-capture small{color:#b99aff66;font-size:.72rem}
 
 /* ─── BOTTOM CTA ─── */
-.ready{position:relative;min-height:440px;display:grid;place-items:center;padding:80px 20px;text-align:center;background:linear-gradient(#000c,#000),url('assets/mystics/raven.png') center/420px no-repeat}.ready>div{max-width:640px}.ready p{color:#c8a7f2b3;line-height:1.65;margin:0 0 8px}.ready-actions{display:flex;gap:16px;justify-content:center;margin:28px auto 14px}.ready-actions a{width:200px}
+.ready{position:relative;min-height:440px;display:grid;place-items:center;padding:80px 20px;text-align:center;background:linear-gradient(#000c,#000),url('assets/mystics/raven.png') center/420px no-repeat}
+/* WebP upgrade for the .ready backdrop. image-set() is honoured by every
+   browser that supports WebP; older engines ignore this rule entirely and
+   keep the PNG declared above. */
+@supports (background-image: image-set(url('x.webp') type('image/webp'))){
+.ready{background:linear-gradient(#000c,#000),image-set(url('assets/mystics/raven.webp') type('image/webp'),url('assets/mystics/raven.png') type('image/png')) center/420px no-repeat}
+}.ready>div{max-width:640px}.ready p{color:#c8a7f2b3;line-height:1.65;margin:0 0 8px}.ready-actions{display:flex;gap:16px;justify-content:center;margin:28px auto 14px}.ready-actions a{width:200px}
 .ready-fine{margin-top:8px!important;color:#b99aff77;font-size:.78rem}
 
 /* ─── FOOTER ─── */
