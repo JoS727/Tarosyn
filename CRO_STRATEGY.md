@@ -69,6 +69,20 @@ These three points should remain adjacent to the CTA anywhere the visitor is mak
 
 The primary CTA is a low-friction behavior, not a subscription commitment. Pricing CTAs deliberately route visitors back through the free experience because the product should earn the upgrade.
 
+## Mystic pricing decision
+
+- **U.S. list price:** `$7.99/month`
+- **Annual anchor:** `$59.99/year`, equivalent to about `$5/month`
+- **Annual saving:** `37%` versus twelve Mystic monthly payments (`$95.88`)
+
+The $7.99 price is intentionally one step below the dominant $9.99 North American monthly subscription anchor. It keeps Mystic accessible enough to convert spiritually curious users who are not ready for a premium commitment, while avoiding the volume-dependent economics of the roughly $6.67 low-price cohort.
+
+The market context supports this position: RevenueCat reports a $9.99 North American monthly median and a $6.67 median for low-priced apps; Labyrinthos lists a $9.99 monthly tarot subscription; and CHANI lists premium at $11.99 monthly. Mystic therefore enters below the clearest direct substitutes without signaling a disposable or ad-supported product.
+
+At standard payment costs, $7.99 leaves approximately `$6.79` after a 15% app-store fee or `$7.46` after Stripe's 2.9% + 30¢ U.S. online-card fee, before taxes, AI inference, support, and other variable costs. Monitor first-reading-to-paid conversion, first monthly renewal, refund rate, and contribution margin before testing a lower price.
+
+Sources: [RevenueCat State of Subscription Apps 2026](https://www.revenuecat.com/state-of-subscription-apps-2026-utilities), [Labyrinthos App Store listing](https://labyrinthos.app/), [CHANI pricing](https://chaninicholas.zendesk.com/hc/en-us/articles/1500001732281-App-Pricing), [Apple Small Business Program](https://developer.apple.com/app-store/small-business-program/), [Google Play service fees](https://support.google.com/googleplay/android-developer/answer/112622), and [Stripe pricing](https://stripe.com/pricing).
+
 ### Placements
 
 1. Navigation: persistent compact CTA.
