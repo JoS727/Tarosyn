@@ -14,7 +14,8 @@ Deploy this repository directly to the static host used by `tarosyn.com` so the 
 - `project.html` — public living project record: charter, product focus, priorities, and accountability rules
 - `project.css` — styles for the public project record
 - `styles.css` — all styling; no build required
-- `script.js` — mobile navigation only
+- `script.js` — mobile navigation, progressive reveals, FAQ behavior, and CTA measurement hooks
+- `CRO_STRATEGY.md` — conversion rationale, section psychology, CTA measurement plan, claim guardrails, and experiment backlog
 - `assets/` — local Tarosyn brand assets copied from the app's public asset library
 - `robots.txt` and `sitemap.xml` — crawler discovery for `tarosyn.com`
 - `site.webmanifest` — browser/app identity metadata
