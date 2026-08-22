@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#07030d">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="Tarosyn is committed to protecting the confidentiality, integrity, and availability of user data and platform systems. This Information Security Policy (&amp;q">
+  <link rel="canonical" href="https://tarosyn.com/legal/information-security/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Tarosyn">
+  <meta property="og:url" content="https://tarosyn.com/legal/information-security/">
+  <meta property="og:title" content="Information Security Policy — Tarosyn">
+  <title>Information Security Policy — Tarosyn</title>
+  <link rel="icon" href="../../assets/tarosyn-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css?v=5">
+  <link rel="stylesheet" href="../legal.css?v=1">
+</head>
+<body>
+  <header class="legal-header">
+    <div class="shell">
+      <a class="brand" href="/"><picture><source type="image/webp" srcset="../../assets/tarosyn-icon.webp"><img src="../../assets/tarosyn-icon.png" alt="" width="34" height="34"></picture><span>TAROSYN</span></a>
+      <nav><a href="/legal/">All policies</a><a href="https://tarosyn.app">Open the app</a></nav>
+    </div>
+  </header>
+
+  <main class="shell legal-doc">
+    <article>
+      <p class="legal-eyebrow">Tarosyn Legal</p>
+      <h1>Information Security Policy</h1>
+      <p class="legal-updated">Last updated May 31, 2026</p>
+      <p>Tarosyn is committed to protecting the confidentiality, integrity, and availability of user data and platform systems. This Information Security Policy (&quot;Policy&quot;) describes, at a high level, how Tarosyn approaches security governance, risk management, access control, and incident response. It is intended for users, enterprise customers, and partners who wish to understand our security posture. Detailed internal procedures are maintained separately and are not disclosed publicly.</p>
+      <h2>1. security governance</h2>
+      <p>Tarosyn maintains a security programme that is reviewed and updated on an ongoing basis. Responsibility for information security is shared across engineering, operations, and leadership, with a designated owner accountable for the overall programme.</p>
+      <p>Security policies and standards are reviewed at least annually and after any material change to the platform. Engineering and operational staff receive security-awareness training appropriate to their roles. Third-party vendors and processors are assessed for security posture before being granted access to user data or production systems. Security considerations are incorporated into the software development lifecycle — from design review through deployment and post-release monitoring.</p>
+      <h2>2. risk management</h2>
+      <p>We identify, assess, and treat information security risks as an integral part of operating the platform. Our risk approach includes:</p>
+      <p>Periodic risk assessments that consider threats to user data, service availability, and platform integrity. Prioritised remediation of identified risks based on likelihood and potential impact. Dependency and supply-chain monitoring — third-party libraries are scanned for known vulnerabilities as part of the CI/CD pipeline. Penetration testing and vulnerability assessments conducted internally and, where appropriate, by independent third parties. A public Bug Bounty programme that invites responsible disclosure of security vulnerabilities from external researchers.</p>
+      <p>To report a vulnerability, see our Vulnerability Disclosure Policy or the Bug Bounty programme.</p>
+      <h2>3. access controls &amp; data protection</h2>
+      <p>Access to production systems, user data, and administrative capabilities is restricted on the principle of least privilege.</p>
+      <p>Production database and infrastructure access is limited to authorised engineering personnel. Access is reviewed periodically and revoked promptly when no longer required. All administrative operations that affect user accounts, subscriptions, or content are authenticated via a session-bound credential — bot API keys are explicitly excluded from high-privilege paths. Sensitive data at rest (passwords, tokens, payment references) is never stored in plaintext. Passwords are hashed using an industry-standard adaptive algorithm. Data in transit between clients and the platform is encrypted via TLS. Internal service-to-service calls use encrypted channels. User-uploaded media is stored in isolated object storage with server-enforced access controls and non-executable content-type restrictions. Payments are handled via Stripe and Apple/Google Pay — Tarosyn does not store raw card numbers, CVVs, or full payment-instrument details.</p>
+      <h2>4. employee &amp; workforce practices</h2>
+      <p>Our workforce practices are designed to reduce insider risk and ensure that everyone with access to the platform handles user data responsibly.</p>
+      <p>All personnel with access to production systems or user data are subject to confidentiality obligations. Access credentials are unique per individual — shared passwords are not permitted for administrative systems. Multi-factor authentication is required for access to administrative consoles and cloud infrastructure. Security training covering phishing, social engineering, and safe data handling is provided to all engineering and operations staff. Access rights are promptly revoked upon role change or departure.</p>
+      <h2>5. availability &amp; resilience</h2>
+      <p>Tarosyn is designed to remain available and recoverable under adverse conditions.</p>
+      <p>The platform is hosted on cloud infrastructure with redundancy and automatic failover capabilities. Database backups are performed regularly and tested periodically to confirm recoverability. Rate limiting, abuse detection, and resource caps are in place to protect availability against denial-of-service conditions. Monitoring and alerting are configured for abnormal error rates, latency spikes, and security-relevant events.</p>
+      <h2>6. incident detection &amp; response</h2>
+      <p>Tarosyn maintains an incident response process to detect, contain, and recover from security events in a timely manner.</p>
+      <p>Security-relevant events are logged centrally and reviewed as part of ongoing monitoring. Suspected incidents are assessed for severity and escalated to appropriate personnel without delay. Where an incident results in unauthorised access to personal data, Tarosyn will notify affected users and relevant regulators in accordance with applicable law. Post-incident reviews are conducted to identify root causes and prevent recurrence. Users who discover a potential security incident or vulnerability should contact us immediately at security@tarosyn.com or via the Bug Bounty programme — we do not pursue legal action against good-faith researchers. certifications &amp; compliance</p>
+      <p>Tarosyn does not currently hold a formal third-party certification (e.g. SOC 2 Type II, ISO 27001). We are evaluating formal certification programmes as the platform scales. In the meantime, this Policy and the practices described within it represent our current security commitment.</p>
+      <p>Enterprise customers or partners who require a completed security questionnaire or additional documentation can request it using the form below, or email us directly at security@tarosyn.com.</p>
+      <p>request a security questionnaire</p>
+      <p>Evaluating Tarosyn for your organisation? Tell us a little about your intended use and which compliance frameworks you work with, and our security team will route a completed questionnaire and any supporting documentation to you.</p>
+      <p>Company name Work email Intended use Frameworks required (optional)</p>
+      <h2>SOC 2</h2>
+      <h2>ISO 27001</h2>
+      <h2>GDPR</h2>
+      <h2>HIPAA</h2>
+      <h2>PCI-DSS</h2>
+      <h2>NIST</h2>
+      <h2>CSA STAR / CAIQ</h2>
+      <p>Other Additional details (optional) Request security questionnaire changes to this policy</p>
+      <p>This Policy will be reviewed and updated periodically to reflect changes in our practices or applicable law. Material updates will be communicated via in-app notification or email.</p>
+      <p>See our Security &amp; Bug Bounty overview</p>
+      <p>© 2026 Tarosyn LLC. All rights reserved.</p>
+      <p>Security enquiries? security@tarosyn.com</p>
+    </article>
+  </main>
+
+  <footer class="legal-footer">
+    <div class="shell">
+      <p>&copy; 2026 Tarosyn LLC. Readings are for entertainment and self-reflection purposes only.</p>
+      <p><a href="/legal/">All policies</a> &middot; <a href="/">tarosyn.com</a> &middot; <a href="mailto:Support@tarosyn.com">Support@tarosyn.com</a></p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,151 @@
+/* Legal documents — tarosyn.com
+ *
+ * These pages exist so the app's LegalSummaryCard has somewhere real to point.
+ * A legal document has to be readable without an account, printable, and
+ * findable with ctrl-F, so this is a plain long-form column rather than the
+ * landing page's sectioned layout.
+ *
+ * Inherits the brand palette from styles.css; only what differs is set here.
+ */
+
+.legal-header {
+  border-bottom: 1px solid var(--line);
+  padding: 18px 0;
+  background: var(--bg-deep);
+}
+
+.legal-header .shell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.legal-header nav {
+  display: flex;
+  gap: 22px;
+}
+
+.legal-header nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+.legal-header nav a:hover {
+  color: var(--ink);
+}
+
+.legal-doc {
+  /* 68ch keeps lines in the comfortable range for sustained reading; a legal
+     document is read in full far more often than a marketing page. */
+  max-width: 68ch;
+  padding: 56px 20px 96px;
+}
+
+.legal-eyebrow {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  margin: 0 0 10px;
+}
+
+.legal-doc h1 {
+  font-family: var(--serif, "Playfair Display", serif);
+  font-size: clamp(1.9rem, 5vw, 2.6rem);
+  line-height: 1.15;
+  margin: 0 0 8px;
+  color: var(--ink);
+}
+
+.legal-updated {
+  color: var(--muted);
+  font-size: 0.88rem;
+  margin: 0 0 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.legal-doc h2 {
+  font-family: var(--serif, "Playfair Display", serif);
+  font-size: 1.22rem;
+  line-height: 1.3;
+  margin: 40px 0 12px;
+  color: var(--gold-bright);
+  /* Section numbers arrive lowercased from the app's own styling; the source
+     text is never reworded here, so restore the capital in CSS. */
+  text-transform: capitalize;
+}
+
+.legal-doc p {
+  color: #d9cfe4;
+  line-height: 1.72;
+  margin: 0 0 16px;
+  font-size: 1rem;
+}
+
+.legal-doc a {
+  color: var(--purple-bright);
+}
+
+.legal-footer {
+  border-top: 1px solid var(--line);
+  padding: 30px 0 48px;
+  background: var(--bg-deep);
+}
+
+.legal-footer p {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin: 0 0 6px;
+}
+
+.legal-footer a {
+  color: var(--muted);
+}
+
+/* Index of all policies */
+.legal-index-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+  margin: 36px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.legal-index-grid a {
+  display: block;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 0.18s ease, transform 0.18s ease;
+}
+
+.legal-index-grid a:hover {
+  border-color: var(--line-strong);
+  transform: translateY(-2px);
+}
+
+.legal-index-grid strong {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.legal-index-grid span {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+@media print {
+  .legal-header,
+  .legal-footer { display: none; }
+  .legal-doc { max-width: none; padding: 0; }
+  .legal-doc p,
+  .legal-doc h2 { color: #000; }
+}

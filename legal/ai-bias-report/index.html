@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#07030d">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="Inaugural report · Pre-launch through May 2026 Tarosyn&amp;#x27;s AI shapes deeply personal experiences — readings, horoscopes, Oracle conversations, and gener">
+  <link rel="canonical" href="https://tarosyn.com/legal/ai-bias-report/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Tarosyn">
+  <meta property="og:url" content="https://tarosyn.com/legal/ai-bias-report/">
+  <meta property="og:title" content="AI Bias Report — Tarosyn">
+  <title>AI Bias Report — Tarosyn</title>
+  <link rel="icon" href="../../assets/tarosyn-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css?v=5">
+  <link rel="stylesheet" href="../legal.css?v=1">
+</head>
+<body>
+  <header class="legal-header">
+    <div class="shell">
+      <a class="brand" href="/"><picture><source type="image/webp" srcset="../../assets/tarosyn-icon.webp"><img src="../../assets/tarosyn-icon.png" alt="" width="34" height="34"></picture><span>TAROSYN</span></a>
+      <nav><a href="/legal/">All policies</a><a href="https://tarosyn.app">Open the app</a></nav>
+    </div>
+  </header>
+
+  <main class="shell legal-doc">
+    <article>
+      <p class="legal-eyebrow">Tarosyn Legal</p>
+      <h1>AI Bias Report</h1>
+      <p class="legal-updated">Last updated May 31, 2026</p>
+      <p>Inaugural report · Pre-launch through May 2026</p>
+      <p>Tarosyn&#x27;s AI shapes deeply personal experiences — readings, horoscopes, Oracle conversations, and generated artwork. Because that content touches identity, belief, and self-image, we audit it for bias and unfairness on a recurring schedule and publish what we find. This report explains our methodology, summarises the issues surfaced to date, and documents the remediation actions taken in response. It is a companion to our Responsible AI Principles (Principle 1: Fairness) and our AI Safety Policy.</p>
+      <h2>AUDIT CYCLE</h2>
+      <p>Quarterly</p>
+      <p>Scheduled fairness review of AI surfaces, plus continuous report-driven checks.</p>
+      <h2>SURFACES REVIEWED</h2>
+      <p>7</p>
+      <p>Readings, Oracle, personas, dreams, photo reading, artwork, and editorial content.</p>
+      <h2>ISSUES REMEDIATED</h2>
+      <p>3</p>
+      <p>Bias-related findings closed with a prompt, filter, or data change this period.</p>
+      <h2>SECTION 1</h2>
+      <p>Methodology</p>
+      <p>Our fairness auditing combines structured testing with signals from real usage. Each audit cycle covers:</p>
+      <p>Prompt probing — we run a fixed battery of test prompts that vary protected characteristics (gender, race, religion, age, disability, sexual orientation) while holding the spiritual question constant, then compare outputs for differences in tone, assumptions, or quality. Persona consistency checks — every Mystic Persona is tested against the same prompt set to confirm the persona&#x27;s voice does not introduce stereotyping or unequal treatment. Image-output review — a sample of AI-generated artwork is reviewed for representational skew (for example, defaulting to a narrow set of skin tones, body types, or gender presentations). Report-signal analysis — user reports tagged as biased or offensive are categorised and reviewed against this report&#x27;s findings. Tier-parity checks — we confirm subscription tier does not change the impartiality or care of AI reasoning, only the breadth of features.</p>
+      <p>Findings are triaged by severity and likelihood of user harm. Anything that could disadvantage or misrepresent a protected group is prioritised for remediation before the next release.</p>
+      <h2>SECTION 2</h2>
+      <p>Findings to date</p>
+      <p>The table below summarises bias-related issues surfaced during pre-launch auditing, with their current status.</p>
+      <p>Gendered relationship readings</p>
+      <h2>RESOLVED</h2>
+      <p>Test prompts about relationships occasionally defaulted to heteronormative framing (assuming an opposite-gender partner). Resolved by updating system prompts to keep language partner-neutral unless the user specifies otherwise.</p>
+      <p>Artwork representational skew</p>
+      <h2>RESOLVED</h2>
+      <p>Early Celestial Children and Living Card generations skewed toward a narrow range of skin tones. Resolved by revising image prompt templates to encourage diverse, non-default representation.</p>
+      <p>Cultural and faith stereotyping</p>
+      <h2>RESOLVED</h2>
+      <p>A small number of outputs treated specific real-world faith traditions as monolithic. Resolved by reinforcing prompt guardrails that frame Mystic Personas as fictional archetypes, not representations of any real culture or religion.</p>
+      <p>Age-assumption drift</p>
+      <h2>MONITORING</h2>
+      <p>Outputs sometimes assumed a younger user when no age context was given. Mitigated with prompt adjustments; we are monitoring live usage to confirm the fix holds at scale.</p>
+      <p>Language and dialect coverage</p>
+      <h2>OPEN</h2>
+      <p>AI quality is strongest in standard English; readings in other languages and dialects are less consistent. Tracked as an open item for our multilingual roadmap; no fix shipped this period.</p>
+      <h2>SECTION 3</h2>
+      <p>Remediation actions</p>
+      <p>When an audit or user report surfaces a bias issue, we respond through one or more of the following levers:</p>
+      <p>System-prompt revisions — the fastest and most common fix; we adjust the instructions sent with every AI call to remove biased defaults and reinforce neutral, inclusive framing. Image prompt-template updates — for generated artwork, we revise the templates that seed image models so representation is varied by default. Filter and guardrail tuning — we tighten content filters where outputs cross into stereotyping or unequal treatment. Persona re-review — affected Mystic Personas are re-tested against the full prompt battery before the fix is considered closed. Documentation — every closed finding is recorded here, and material changes are reflected in our Responsible AI Principles and AI Safety Policy.</p>
+      <h2>SECTION 4</h2>
+      <p>Reporting cadence</p>
+      <p>We run a structured fairness audit each quarter and update this report at least once a year, or sooner when a significant finding warrants it. Between scheduled audits, we continuously review user reports tagged as biased or offensive and act on them within the same 24-hour moderation window that applies to all reported content.</p>
+      <p>The next update will cover our first full quarter of live usage and will replace the pre-launch figures above with audited production data.</p>
+      <h2>SECTION 5</h2>
+      <p>Limitations</p>
+      <p>We want to be honest about what this report can and cannot claim. Bias auditing of generative AI is an evolving discipline; our methodology will improve over time. No audit eliminates bias entirely, and outputs from third-party foundation models can shift between versions. Our commitment is to keep looking, to publish what we find — including the uncomfortable parts — and to fix what we can as quickly as we can.</p>
+      <p>Report a biased AI output</p>
+      <p>If an AI reading, persona response, or generated image felt biased, stereotyping, or unfair, please tell us. Use the in-app Report button on any reading or shared card, or email Support@tarosyn.com. Every report is reviewed and feeds directly into the next audit cycle.</p>
+      <p>Responsible AI Principles AI Safety Policy AI Transparency</p>
+      <p>© 2026 Tarosyn LLC. All rights reserved.</p>
+      <p>Questions? Support@tarosyn.com</p>
+    </article>
+  </main>
+
+  <footer class="legal-footer">
+    <div class="shell">
+      <p>&copy; 2026 Tarosyn LLC. Readings are for entertainment and self-reflection purposes only.</p>
+      <p><a href="/legal/">All policies</a> &middot; <a href="/">tarosyn.com</a> &middot; <a href="mailto:Support@tarosyn.com">Support@tarosyn.com</a></p>
+    </div>
+  </footer>
+</body>
+</html>

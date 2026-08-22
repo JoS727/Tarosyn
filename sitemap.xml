@@ -12,4 +12,40 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url><loc>https://tarosyn.com/legal/</loc><lastmod>2026-08-21</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://tarosyn.com/legal/about/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/acceptable-use/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/accessibility/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/account-deletion/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/age-rating/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/ai/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/ai-bias-report/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/ai-safety/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/ai-training-data/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/ai-usage/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/app-privacy/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/appeals/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/community-guidelines/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/content-moderation/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/cookies/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/data-retention/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/dmca/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/dpa/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/eula/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/high-tier-terms/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/incident-response/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/information-security/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/information-security-policy/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/press/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/privacy/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/refunds/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/responsible-ai/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/security/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/security/acknowledgements/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/subscription/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/support/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/terms/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/trust-center/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/user-reporting/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tarosyn.com/legal/vulnerability-disclosure/</loc><lastmod>2026-08-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#07030d">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="Tarosyn is built on the belief that your spiritual journey is deeply personal. Protecting the data you share with us — your readings, birth details, messag">
+  <link rel="canonical" href="https://tarosyn.com/legal/security/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Tarosyn">
+  <meta property="og:url" content="https://tarosyn.com/legal/security/">
+  <meta property="og:title" content="Security Overview — Tarosyn">
+  <title>Security Overview — Tarosyn</title>
+  <link rel="icon" href="../../assets/tarosyn-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css?v=5">
+  <link rel="stylesheet" href="../legal.css?v=1">
+</head>
+<body>
+  <header class="legal-header">
+    <div class="shell">
+      <a class="brand" href="/"><picture><source type="image/webp" srcset="../../assets/tarosyn-icon.webp"><img src="../../assets/tarosyn-icon.png" alt="" width="34" height="34"></picture><span>TAROSYN</span></a>
+      <nav><a href="/legal/">All policies</a><a href="https://tarosyn.app">Open the app</a></nav>
+    </div>
+  </header>
+
+  <main class="shell legal-doc">
+    <article>
+      <p class="legal-eyebrow">Tarosyn Legal</p>
+      <h1>Security Overview</h1>
+      <p class="legal-updated">Last updated May 31, 2026</p>
+      <p>Tarosyn is built on the belief that your spiritual journey is deeply personal. Protecting the data you share with us — your readings, birth details, messages, and payment information — is a responsibility we take seriously. This page summarises the controls we have in place.</p>
+      <p>Visit the Trust Center</p>
+      <p>The single hub linking every security, privacy, compliance, and AI governance document — plus enterprise documentation requests.</p>
+      <p>compliance documents</p>
+      <p>Enterprise, security, and compliance teams can review and download our core governance documents directly. For the full library — including sub-processors, data retention, and audited controls — visit the Trust Center.</p>
+      <p>Data Processing Agreement (DPA)</p>
+      <p>Controller/processor roles, our sub-processor list, technical and organisational security measures, breach notification terms, and SCCs for GDPR-compliant data transfers.</p>
+      <p>View</p>
+      <p>Information Security Policy</p>
+      <p>Our formal commitments on security governance, access controls, risk management, and incident response — written for enterprise and partner review.</p>
+      <p>View</p>
+      <h2>1. encryption in transit</h2>
+      <p>All communication between your browser or mobile app and Tarosyn&#x27;s servers is protected by TLS (Transport Layer Security). We require modern cipher suites and do not support legacy protocols such as SSLv3, TLS 1.0, or TLS 1.1.</p>
+      <p>HTTPS enforced across every endpoint — HTTP requests are redirected automatically Strict-Transport-Security (HSTS) headers encourage browsers to remember to always use HTTPS WebSocket connections (used for real-time features such as live reading sessions) are also TLS-encrypted</p>
+      <h2>2. encryption at rest</h2>
+      <p>Sensitive data stored by Tarosyn is encrypted at rest using industry-standard encryption provided by our hosting and storage infrastructure.</p>
+      <p>Database volumes are encrypted at the storage layer Object storage (uploaded images, generated artwork, documents) uses server-side encryption Passwords are never stored in plain text — they are hashed using a modern adaptive algorithm (bcrypt) before persistence Payment card data is not stored on Tarosyn servers — billing is handled entirely by Stripe, a PCI-DSS Level 1 certified processor</p>
+      <h2>3. access controls</h2>
+      <p>Access to Tarosyn systems follows the principle of least privilege — staff and automated processes are granted only the permissions required for their specific role.</p>
+      <p>Production database access is restricted to backend services and a small number of authorised engineers Administrative UI actions (content moderation, tier management, code proposals) require an authenticated session with verified god-mode or subadmin privileges — bot API keys cannot approve their own changes Destructive or sensitive admin operations (raw SQL, migration runs) additionally require a direct session, not just a bot key Multi-factor authentication is encouraged for all team members with access to production systems API endpoints enforce authentication and authorisation server-side; client-supplied roles or user IDs are never trusted without server validation</p>
+      <h2>4. infrastructure &amp; hosting</h2>
+      <p>Tarosyn&#x27;s backend services run on Replit&#x27;s managed cloud infrastructure, which provides platform-level isolation, automatic TLS termination, and regular security patching of the underlying runtime environment.</p>
+      <p>Application containers are isolated at the platform level Outbound server-side fetches (image proxy, link previews) validate destination URLs against a blocklist of private and link-local IP ranges to prevent server-side request forgery (SSRF) Uploaded media is stored in object storage with server-controlled ACLs; content is served with X-Content-Type-Options: nosniff headers and, for executable MIME types, a Content-Disposition: attachment header to prevent same-origin script execution Dependency audits are run as part of our CI pipeline to flag known vulnerable packages</p>
+      <h2>5. monitoring &amp; incident response</h2>
+      <p>We maintain structured server-side logging of authentication events, payment actions, and administrative operations. Logs are used to detect anomalies and to reconstruct event timelines during incident investigations.</p>
+      <p>Auth events (login, OAuth callbacks, Apple/Google native sign-in, failed attempts) are logged with contextual metadata Payment and entitlement changes are audit-logged with the acting user and method Moderation actions (content removal, bans, dismissals) are recorded in an audit trail We aim to investigate and resolve confirmed security incidents in a timely manner and will notify affected users as required by applicable law</p>
+      <h2>6. third-party services</h2>
+      <p>Tarosyn integrates with a small number of trusted third-party providers. We share only the data each service requires to perform its function.</p>
+      <p>Stripe — payment processing. Card data goes directly to Stripe and never touches Tarosyn servers. OpenAI — AI reading generation, Oracle chat, and image creation. Prompts include only the data necessary for the requested feature; we do not send raw contact lists or full user profiles. SendGrid — transactional email delivery (verification codes, notifications). Only the recipient address and relevant content are sent. Apple App Store / Google Play — in-app purchase verification. Transaction tokens are verified server-to-server against Apple&#x27;s and Google&#x27;s APIs. vulnerability disclosure</p>
+      <p>We welcome responsible security research. If you believe you have found a vulnerability in any Tarosyn service, please report it through our Bug Bounty programme. Valid reports are reviewed by the engineering team and, where appropriate, rewarded with Luna credits.</p>
+      <p>Please do not publicly disclose a potential vulnerability before we have had a reasonable opportunity to investigate and address it. We ask that you:</p>
+      <p>Describe the vulnerability clearly, including steps to reproduce Limit testing to your own account — do not access or modify other users&#x27; data Avoid automated scanning or denial-of-service techniques Give us a reasonable time to investigate before any public disclosure</p>
+      <p>For urgent security matters that cannot be submitted through the in-app form, email Security@tarosyn.com.</p>
+      <p>For the detailed operational policy behind these practices — data classification tiers, access provisioning and deprovisioning, incident response SLAs, audit log retention, and employee security training — see our Information Security Policy.</p>
+      <p>View the Bug Bounty programme changes to this overview</p>
+      <p>As our security programme matures we will update this page to reflect new controls and certifications. Material changes will be noted in the &quot;Last Updated&quot; date above. For questions about our security practices, contact Security@tarosyn.com.</p>
+      <p>© 2026 Tarosyn LLC. All rights reserved.</p>
+      <p>Questions? Support@tarosyn.com</p>
+    </article>
+  </main>
+
+  <footer class="legal-footer">
+    <div class="shell">
+      <p>&copy; 2026 Tarosyn LLC. Readings are for entertainment and self-reflection purposes only.</p>
+      <p><a href="/legal/">All policies</a> &middot; <a href="/">tarosyn.com</a> &middot; <a href="mailto:Support@tarosyn.com">Support@tarosyn.com</a></p>
+    </div>
+  </footer>
+</body>
+</html>

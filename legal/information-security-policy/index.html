@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#07030d">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="This document sets out the internal procedures that put Tarosyn&amp;#x27;s security commitments into practice. Where the public overview describes what we prot">
+  <link rel="canonical" href="https://tarosyn.com/legal/information-security-policy/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Tarosyn">
+  <meta property="og:url" content="https://tarosyn.com/legal/information-security-policy/">
+  <meta property="og:title" content="Information Security Policy — Tarosyn">
+  <title>Information Security Policy — Tarosyn</title>
+  <link rel="icon" href="../../assets/tarosyn-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css?v=5">
+  <link rel="stylesheet" href="../legal.css?v=1">
+</head>
+<body>
+  <header class="legal-header">
+    <div class="shell">
+      <a class="brand" href="/"><picture><source type="image/webp" srcset="../../assets/tarosyn-icon.webp"><img src="../../assets/tarosyn-icon.png" alt="" width="34" height="34"></picture><span>TAROSYN</span></a>
+      <nav><a href="/legal/">All policies</a><a href="https://tarosyn.app">Open the app</a></nav>
+    </div>
+  </header>
+
+  <main class="shell legal-doc">
+    <article>
+      <p class="legal-eyebrow">Tarosyn Legal</p>
+      <h1>Information Security Policy</h1>
+      <p class="legal-updated">Last updated May 31, 2026</p>
+      <p>This document sets out the internal procedures that put Tarosyn&#x27;s security commitments into practice. Where the public overview describes what we protect and the principles we follow, this policy describes how those principles are operationalised day to day. It applies to all engineering and operations personnel, automated services, and any third party granted access to production systems or user data.</p>
+      <h2>1. data classification tiers</h2>
+      <p>Every piece of data Tarosyn stores is assigned to one of four classification tiers. The tier determines how the data is stored, who may access it, and how access is logged. When in doubt, data is treated at the higher (more restrictive) tier.</p>
+      <p>Tier 0 Public</p>
+      <p>Examples: Marketing pages, public blog posts, gallery cards explicitly shared, store listings.</p>
+      <p>Handling: No access restrictions. May be cached and distributed freely. Still subject to integrity controls so it cannot be tampered with.</p>
+      <p>Tier 1 Internal</p>
+      <p>Examples: Aggregated/anonymised metrics, non-sensitive operational logs, internal documentation.</p>
+      <p>Handling: Restricted to authenticated staff and services. Not exposed to end users. Least-privilege applies.</p>
+      <p>Tier 2 Confidential — user data</p>
+      <p>Examples: Readings, journal entries, DMs, birth-chart inputs, uploaded media, profile data, push subscriptions.</p>
+      <p>Handling: Encrypted in transit and at rest. Access scoped to the owning user or an explicitly permitted relationship. Staff access requires a session-bound credential and is audit-logged.</p>
+      <p>Tier 3 Restricted — secrets &amp; credentials</p>
+      <p>Examples: Password hashes, session/guest/shadow tokens, Stripe references, API keys, signing keys, the session secret, database credentials.</p>
+      <p>Handling: Stored only in the secrets manager or hashed in the database — never in source, logs, or client storage. Access limited to the smallest possible set of services and engineers. Rotated on suspicion of compromise.</p>
+      <h2>2. access provisioning &amp; deprovisioning</h2>
+      <p>Access to production systems and Tier 2–3 data follows a documented lifecycle built on least privilege. Access is granted only when there is a clear operational need and is removed as soon as that need ends.</p>
+      <p>Provisioning</p>
+      <p>Access requests are tied to a specific role and the minimum set of permissions that role requires — broad or standing admin access is avoided. A separate approver (not the requester) authorises any grant of production or Tier 2–3 access. Every individual receives unique, named credentials. Shared logins are prohibited for administrative systems. Multi-factor authentication is required before any production console or cloud-infrastructure access is activated. Automated services receive scoped service credentials, never a human&#x27;s personal credentials, and bot API keys are excluded from high-privilege admin paths.</p>
+      <p>Review &amp; deprovisioning</p>
+      <p>Access rights are reviewed on a recurring schedule and re-justified; anything no longer needed is revoked. On role change, access is re-scoped to the new role and any now-unnecessary permissions are removed. On departure, all access — accounts, credentials, tokens, and keys — is revoked promptly, and shared secrets the person could have known are rotated. Deprovisioning actions are recorded so the timeline of who had access to what can be reconstructed during a review or investigation.</p>
+      <h2>3. incident response sla</h2>
+      <p>When a security event is suspected, it is triaged by severity and handled against the following target response times. These targets cover acknowledgement and the start of containment — full resolution time depends on the nature of the incident.</p>
+      <p>Critical (Sev-1)</p>
+      <p>Active breach, confirmed unauthorised access to Tier 2–3 data, or full service outage.</p>
+      <p>Acknowledge within 1 hour. Containment begins immediately, 24/7.</p>
+      <p>High (Sev-2)</p>
+      <p>Credible exploitable vulnerability, suspected data exposure, or significant degradation.</p>
+      <p>Acknowledge within 4 hours during business hours. Containment plan within 24 hours.</p>
+      <p>Medium (Sev-3)</p>
+      <p>Lower-risk vulnerability or anomaly with limited blast radius.</p>
+      <p>Acknowledge within 1 business day. Remediation scheduled into the normal work queue.</p>
+      <p>Low (Sev-4)</p>
+      <p>Informational findings, hardening opportunities, defence-in-depth items.</p>
+      <p>Acknowledge within 3 business days. Tracked as backlog.</p>
+      <p>Where an incident results in unauthorised access to personal data, affected users and relevant regulators are notified in accordance with applicable law — see our Incident Response Policy for our breach-notification commitment. Every Sev-1 and Sev-2 incident is followed by a blameless post-incident review to identify root cause and prevent recurrence.</p>
+      <h2>4. audit log retention</h2>
+      <p>Security-relevant events are logged centrally so that access and administrative activity can be reviewed and reconstructed. Logs are themselves treated as sensitive and access to them is restricted and monitored.</p>
+      <p>Authentication events (login, OAuth/social callbacks, Apple/Google native sign-in, failed attempts) are captured with contextual metadata. Administrative and entitlement changes (moderation actions, tier changes, code-proposal review/apply, raw-SQL and migration runs) are recorded with the acting user and the method of authentication. Payment and subscription state transitions are audit-logged. Operational/application logs are retained for a shorter window for debugging and anomaly detection; security and audit events are retained for a longer window to support investigations and compliance. Logs are scrubbed of secrets, tokens, and raw private user content — log entries reference identifiers, not the underlying sensitive payloads. Retention windows are defined per log category; exact durations are confirmed with legal counsel and aligned to our Data Retention Policy.</p>
+      <p>Personal data captured incidentally in logs is governed by our Data Retention Policy.</p>
+      <h2>5. employee security training</h2>
+      <p>Every person with access to production systems or user data completes security training appropriate to their role, both at onboarding and on a recurring basis thereafter.</p>
+      <p>Security-awareness training is delivered at onboarding before production access is granted, and refreshed at least annually. Training covers phishing and social engineering, safe handling of Tier 2–3 data, secure credential and secret management, and how to recognise and report a suspected incident. Engineers receive secure-development guidance covering input validation, authorisation checks, SSRF and injection risks, and safe handling of secrets in code and CI. All personnel are bound by confidentiality obligations and acknowledge this policy and acceptable-use expectations. Reporting a suspected incident is everyone&#x27;s responsibility — staff are trained to escalate immediately rather than attempt to resolve a suspected breach alone. related policies</p>
+      <p>This detailed policy works alongside our other security and privacy documents. For the high-level summary intended for users and partners, see the public overview; for breach handling, see the incident response policy.</p>
+      <p>Information Security Policy (public overview)</p>
+      <p>Security &amp; Bug Bounty overview changes to this policy</p>
+      <p>This policy is reviewed and updated periodically to reflect changes in our practices, infrastructure, or applicable law. Material updates will be noted in the &quot;Last Updated&quot; date above. For questions, contact security@tarosyn.com.</p>
+      <p>© 2026 Tarosyn LLC. All rights reserved.</p>
+      <p>Security enquiries? security@tarosyn.com</p>
+    </article>
+  </main>
+
+  <footer class="legal-footer">
+    <div class="shell">
+      <p>&copy; 2026 Tarosyn LLC. Readings are for entertainment and self-reflection purposes only.</p>
+      <p><a href="/legal/">All policies</a> &middot; <a href="/">tarosyn.com</a> &middot; <a href="mailto:Support@tarosyn.com">Support@tarosyn.com</a></p>
+    </div>
+  </footer>
+</body>
+</html>

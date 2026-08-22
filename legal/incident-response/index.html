@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#07030d">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="Tarosyn stores personal data that matters to you — birth details, spiritual reflections, messages, and payment records. We treat the security of that data ">
+  <link rel="canonical" href="https://tarosyn.com/legal/incident-response/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Tarosyn">
+  <meta property="og:url" content="https://tarosyn.com/legal/incident-response/">
+  <meta property="og:title" content="Incident Response Policy — Tarosyn">
+  <title>Incident Response Policy — Tarosyn</title>
+  <link rel="icon" href="../../assets/tarosyn-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css?v=5">
+  <link rel="stylesheet" href="../legal.css?v=1">
+</head>
+<body>
+  <header class="legal-header">
+    <div class="shell">
+      <a class="brand" href="/"><picture><source type="image/webp" srcset="../../assets/tarosyn-icon.webp"><img src="../../assets/tarosyn-icon.png" alt="" width="34" height="34"></picture><span>TAROSYN</span></a>
+      <nav><a href="/legal/">All policies</a><a href="https://tarosyn.app">Open the app</a></nav>
+    </div>
+  </header>
+
+  <main class="shell legal-doc">
+    <article>
+      <p class="legal-eyebrow">Tarosyn Legal</p>
+      <h1>Incident Response Policy</h1>
+      <p class="legal-updated">Last updated May 31, 2026</p>
+      <p>Tarosyn stores personal data that matters to you — birth details, spiritual reflections, messages, and payment records. We treat the security of that data as a core responsibility. This policy describes how we detect, investigate, contain, and communicate security incidents, including our commitments on notification timelines for users and regulators.</p>
+      <h2>PHASE 1</h2>
+      <p>Detection &amp; Triage</p>
+      <p>We monitor our systems continuously and investigate every credible signal of unauthorised access or data exposure.</p>
+      <p>Automated alerting is in place for anomalous authentication patterns, unexpected data-access volumes, and infrastructure-level events. Security reports submitted by external researchers through our Bug Bounty programme are triaged within two business days. When an alert is triggered, an on-call engineer performs an initial triage to confirm whether a real incident has occurred and, if so, its probable scope. Incidents are classified by severity — Critical (data confirmed exposed or systems actively compromised), High (credible risk of exposure), Medium (potential vulnerability, no confirmed exposure), and Low (informational).</p>
+      <h2>PHASE 2</h2>
+      <p>Containment &amp; Escalation</p>
+      <p>Once an incident is confirmed, we act immediately to contain the damage and escalate to the right people.</p>
+      <p>For Critical and High incidents, containment steps — such as revoking compromised credentials, blocking malicious IPs, or isolating affected services — are initiated within one hour of confirmation. A named Incident Commander takes ownership and coordinates response across engineering, legal, and communications teams. All incident activity is logged in a secure, append-only record to support investigation and post-incident review. Compromised sessions or authentication tokens are invalidated as soon as the vector is understood. Where a third-party service is involved (e.g., a cloud provider or sub-processor), that vendor is notified and engaged in parallel.</p>
+      <h2>PHASE 3</h2>
+      <p>User &amp; Authority Notification</p>
+      <p>We commit to notifying affected users and relevant authorities without undue delay — and no later than 72 hours after we confirm a breach.</p>
+      <p>If a breach is confirmed and personal data has been, or is likely to have been, accessed without authorisation, Tarosyn will notify affected users within 72 hours of that confirmation. Where applicable law requires notification to a supervisory authority (e.g., a Data Protection Authority under GDPR or a state Attorney General), we will file that notification within the same 72-hour window. User notifications are sent by email to the address on record and, where technically feasible, as an in-app notice. They will describe: what happened, what data was involved, what we have done to address it, and what steps you can take. We will not delay user notification to conduct a full investigation — we communicate what we know when we know it, and follow up with further detail as the investigation concludes. Where a breach is limited to encrypted or pseudonymised data with no demonstrated risk to users, we may determine that individual notification is not warranted; that determination and its reasoning will be documented.</p>
+      <h2>PHASE 4</h2>
+      <p>Recovery &amp; Post-Incident Review</p>
+      <p>After containment we restore normal operations, verify integrity, and conduct a structured review to prevent recurrence.</p>
+      <p>Affected systems are restored from verified clean backups or rebuilt from source where appropriate. A post-incident review is conducted within 14 days of incident closure. It covers root cause, timeline, response effectiveness, and remediation actions. Remediation items are tracked to completion with defined owners and deadlines. Significant incidents are summarised in our internal security log; material incidents affecting user data are disclosed in our annual transparency summary. Lessons learned are fed back into our security controls, monitoring, and team training. Timeline commitments at a glance Initial triage Within 2 hours of alert Containment initiated (Critical / High) Within 1 hour of confirmation User &amp; authority notification Within 72 hours of confirmed breach Follow-up user communication As investigation progresses Post-incident review Within 14 days of incident closure Scope &amp; limitations</p>
+      <p>This policy covers incidents affecting Tarosyn&#x27;s production systems, user data, and the services we operate. It does not govern third-party providers — such as cloud infrastructure, payment processors, or model vendors — beyond the contractual obligations we place on them as sub-processors.</p>
+      <p>Timelines are measured from the point at which an incident is confirmed by Tarosyn staff. Detection lag (the period between an incident occurring and our becoming aware of it) is not included in these commitments, though we work continuously to minimise it.</p>
+      <p>This is a public-facing policy summary. Detailed operational runbooks, escalation trees, and vendor-specific playbooks are maintained internally and are not published here.</p>
+      <p>Reporting a suspected incident</p>
+      <p>If you believe you have discovered a security vulnerability or have evidence of unauthorised access to Tarosyn systems or your account, please contact us immediately at Security@tarosyn.com. Include as much detail as you can — we read every message and will acknowledge receipt within two business days.</p>
+      <p>For general support questions, please use Support@tarosyn.com instead.</p>
+      <p>Trust Center Security Overview Bug Bounty Programme</p>
+      <p>© 2026 Tarosyn LLC. All rights reserved.</p>
+      <p>Questions? Security@tarosyn.com</p>
+    </article>
+  </main>
+
+  <footer class="legal-footer">
+    <div class="shell">
+      <p>&copy; 2026 Tarosyn LLC. Readings are for entertainment and self-reflection purposes only.</p>
+      <p><a href="/legal/">All policies</a> &middot; <a href="/">tarosyn.com</a> &middot; <a href="mailto:Support@tarosyn.com">Support@tarosyn.com</a></p>
+    </div>
+  </footer>
+</body>
+</html>
