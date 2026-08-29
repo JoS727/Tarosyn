@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#07030d">
+  <meta name="robots" content="noindex,follow">
+  <meta name="description" content="That page isn't here. Head back to tarosyn.com or open the app.">
+  <title>Page not found — Tarosyn</title>
+  <link rel="icon" href="/assets/tarosyn-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css?v=5">
+  <style>
+    .nf-wrap{min-height:100svh;display:flex;flex-direction:column}
+    .nf-main{flex:1;display:flex;align-items:center;justify-content:center;padding:6rem 1.25rem}
+    .nf-card{max-width:640px;text-align:center}
+    .nf-code{font-family:"Playfair Display",Georgia,serif;font-size:clamp(4rem,14vw,7.5rem);line-height:1;margin:0 0 .5rem;opacity:.28;letter-spacing:.02em}
+    .nf-title{font-family:"Playfair Display",Georgia,serif;font-size:clamp(1.75rem,5vw,2.75rem);margin:0 0 1rem}
+    .nf-body{opacity:.72;margin:0 auto 2rem;max-width:46ch;line-height:1.6}
+    .nf-actions{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+    .nf-links{margin-top:2.5rem;font-size:.9rem;opacity:.6}
+    .nf-links a{margin:0 .6rem;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.2)}
+  </style>
+</head>
+<body>
+  <div class="nf-wrap">
+    <header class="site-header">
+      <div class="nav-wrap">
+        <a class="brand" href="/" aria-label="Tarosyn home">
+          <picture><source type="image/webp" srcset="/assets/tarosyn-icon.webp"><img src="/assets/tarosyn-icon.png" alt="" width="42" height="42"></picture>
+          <span>TAROSYN</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="nf-main">
+      <div class="nf-card">
+        <p class="nf-code">404</p>
+        <h1 class="nf-title">This card isn't in the deck</h1>
+        <p class="nf-body">The page you asked for doesn't exist on tarosyn.com. If you were looking for your readings, your journal or the Vault, those live inside the app.</p>
+        <div class="nf-actions">
+          <a class="button button-gold" href="https://tarosyn.app">Open the app</a>
+          <a class="button button-quiet" href="/">Back to home</a>
+        </div>
+        <p class="nf-links">
+          <a href="/legal/">Legal &amp; policies</a>
+          <a href="/legal/support/">Support</a>
+          <a href="mailto:joseph@tarosyn.com">Contact</a>
+        </p>
+      </div>
+    </main>
+
+    <footer>
+      <div class="shell footer-legal"><span>© <span id="year"></span> Tarosyn Inc.</span><span>You're a star design.</span></div>
+    </footer>
+  </div>
+  <script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+</body>
+</html>
