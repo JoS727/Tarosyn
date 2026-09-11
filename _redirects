@@ -1,0 +1,4 @@
+# Wiki lives in the app (tarosyn.app/wiki) and is fully public — no login.
+# Make it reachable from the marketing domain without a native copy here.
+/wiki       https://tarosyn.app/wiki          302
+/wiki/*     https://tarosyn.app/wiki/:splat   302
