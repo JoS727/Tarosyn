@@ -16,6 +16,8 @@ Deploy this repository directly to the static host used by `tarosyn.com` so the 
 - `styles.css` — all styling; no build required
 - `script.js` — mobile navigation, progressive reveals, FAQ behavior, and CTA measurement hooks
 - `CRO_STRATEGY.md` — conversion rationale, section psychology, CTA measurement plan, claim guardrails, and experiment backlog
+- `investors.html`, `investors.css`, and `investors.js` — draft investor-conversion route for the planned $777K raise
+- `INVESTOR_CRO_STRATEGY.md` — investor journey, CTA measurement, claim guardrails, and securities-law release gate
 - `assets/` — local Tarosyn brand assets copied from the app's public asset library
 - `robots.txt` and `sitemap.xml` — crawler discovery for `tarosyn.com`
 - `site.webmanifest` — browser/app identity metadata
