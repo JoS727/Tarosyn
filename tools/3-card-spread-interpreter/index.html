@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<!--
+  Tarosyn — 3-Card Spread Interpreter (STATIC, self-contained)
+  Draft asset from CJC growth lane, 2026-10-20. Human-edit before ship.
+  - No backend, no AI calls, no tracking included. All interpretation runs client-side
+    from the editorial card library below (pre-written copy, NOT AI-generated on demand).
+  - TODO before deploy: (1) wire analytics events: tool_used, cta_clicked
+    (2) brand tokens (fonts/colors) to match tarosyn.com design system
+    (3) add page to sitemap.xml  (4) QA on phone viewport
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Do My 3 Tarot Cards Mean Together? — Free Spread Interpreter | Tarosyn</title>
+<meta name="description" content="You drew three cards — now what? Get a personalized past/present/future interpretation that reads your cards as one story, not three dictionary entries.">
+<link rel="canonical" href="https://tarosyn.com/tools/3-card-spread-interpreter/">
+<meta property="og:title" content="What Do My 3 Tarot Cards Mean Together? — Free Spread Interpreter">
+<meta property="og:description" content="Read your three cards as one story. Free, instant, no sign-up.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tarosyn.com/tools/3-card-spread-interpreter/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Tarosyn 3-Card Spread Interpreter",
+  "url": "https://tarosyn.com/tools/3-card-spread-interpreter/",
+  "applicationCategory": "LifestyleApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Select the three tarot cards you drew and read them as one combined story — past, present, future — instead of three separate dictionary meanings."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What do my 3 tarot cards mean together?", "acceptedAnswer": { "@type": "Answer", "text": "A 3-card spread is read as one narrative, not three separate meanings. Each position (commonly past, present, future) modifies the others: a difficult card in the past reads differently when a hopeful card follows it. Start with the through-line — repeated suits, numbers, or themes — then read the tension between adjacent cards." } },
+    { "@type": "Question", "name": "What does a past present future tarot spread mean?", "acceptedAnswer": { "@type": "Answer", "text": "In a past/present/future spread, the first card describes the influence you are coming from, the second the situation as it stands, and the third the direction it is moving. The future position is best read as trajectory, not prediction — it shows where current energy leads if nothing changes." } },
+    { "@type": "Question", "name": "Do reversed cards matter in a 3-card spread?", "acceptedAnswer": { "@type": "Answer", "text": "Reversed (upside-down) cards usually signal the same energy blocked, internalized, or delayed rather than a flat opposite meaning. In a 3-card spread, a reversed card often marks the position where something is stuck." } },
+    { "@type": "Question", "name": "Can the same cards mean different things in different positions?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Position changes the role a card plays: the Tower in the past is a rupture you have already survived; in the future it is a structure under strain now. Always read the card through its position first, then through the cards beside it." } }
+  ]
+}
+</script>
+<style>
+  :root{
+    --bg:#100d1c; --panel:#1a1630; --panel2:#221d40; --ink:#efeaf8; --ink-dim:#b3a8cf;
+    --accent:#b08cff; --accent2:#e8c877; --line:#322a55; --radius:14px;
+    --serif:Georgia,'Times New Roman',serif; --sans:system-ui,-apple-system,'Segoe UI',sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6}
+  main{max-width:760px;margin:0 auto;padding:2rem 1.1rem 4rem}
+  h1{font-family:var(--serif);font-weight:600;font-size:1.9rem;line-height:1.25;margin:.4em 0 .5em}
+  h2{font-family:var(--serif);font-weight:600;font-size:1.35rem;margin:2.2em 0 .6em}
+  p{margin:.7em 0}
+  .lede{color:var(--ink-dim);font-size:1.02rem}
+  .kicker{color:var(--accent2);text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:700}
+  .tool{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1.2rem;margin:1.6rem 0}
+  .slots{display:grid;grid-template-columns:1fr;gap:.9rem}
+  @media(min-width:620px){.slots{grid-template-columns:1fr 1fr 1fr}}
+  .slot{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:.8rem}
+  .slot label{display:block;font-size:.72rem;color:var(--ink-dim);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.3rem}
+  .slot input[type=text],.slot select{width:100%;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:.55rem .6rem;font-size:.95rem}
+  .rev{display:flex;align-items:center;gap:.45rem;margin-top:.55rem;font-size:.85rem;color:var(--ink-dim)}
+  .rev input{accent-color:var(--accent)}
+  .intent{margin-top:1rem}
+  .intent input{width:100%;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:.6rem;font-size:.95rem}
+  .cta-row{margin-top:1.1rem;text-align:center}
+  button.read{background:var(--accent);color:#140f24;border:0;border-radius:999px;padding:.8rem 2rem;font-size:1rem;font-weight:700;cursor:pointer}
+  button.read:hover{filter:brightness(1.1)}
+  .output{margin:1.8rem 0}
+  .reading{background:var(--panel);border:1px solid var(--accent);border-radius:var(--radius);padding:1.3rem}
+  .reading h3{font-family:var(--serif);margin:.2em 0 .4em;font-size:1.15rem;color:var(--accent2)}
+  .cardline{border-left:3px solid var(--accent);padding:.15rem 0 .15rem .8rem;margin:.7rem 0;color:var(--ink-dim);font-size:.95rem}
+  .cardline b{color:var(--ink)}
+  .disclosure{font-size:.8rem;color:var(--ink-dim);margin-top:1rem;border-top:1px solid var(--line);padding-top:.8rem}
+  .appcta{margin:2rem 0;background:linear-gradient(135deg,#241b4d,#3a2a6e);border:1px solid var(--accent);border-radius:var(--radius);padding:1.4rem;text-align:center}
+  .appcta a.button{display:inline-block;margin-top:.7rem;background:var(--accent2);color:#221a08;border-radius:999px;padding:.7rem 1.8rem;font-weight:700;text-decoration:none}
+  .article{color:var(--ink-dim)}
+  .article b{color:var(--ink)}
+  footer{margin-top:3rem;font-size:.8rem;color:var(--ink-dim);border-top:1px solid var(--line);padding-top:1rem}
+  a{color:var(--accent)}
+  .error{color:#ff9d9d;font-size:.9rem;text-align:center;margin-top:.6rem;min-height:1.2em}
+</style>
+</head>
+<body>
+<main>
+  <p class="kicker">Tarosyn · Free Tool</p>
+  <h1>Your three cards are one story. Here’s how to read it.</h1>
+  <p class="lede">Most tarot sites give you three separate card meanings and leave you to glue them together. But a spread isn’t a list — it’s a sentence. The cards modify each other: a Tower in the past reads differently when the Star follows it. Select the three cards you drew below, tell us what you were asking about, and we’ll read them the way a reader would — as one narrative, with the tension between positions made explicit. No sign-up needed.</p>
+
+  <section class="tool" aria-label="3-card spread interpreter">
+    <div class="slots" id="slots"></div>
+    <div class="intent">
+      <label for="intention" style="font-size:.72rem;color:var(--ink-dim);text-transform:uppercase;letter-spacing:.08em">What were you asking about? (optional)</label>
+      <input type="text" id="intention" maxlength="140" placeholder="e.g. my relationship, a job offer, where I’m headed">
+    </div>
+    <div class="cta-row">
+      <button class="read" id="readBtn">Read my spread</button>
+      <p class="error" id="err"></p>
+    </div>
+  </section>
+
+  <section class="output" id="output" hidden>
+    <div class="reading">
+      <h3 id="rTitle"></h3>
+      <div id="rCards"></div>
+      <h3>The through-line</h3><p id="rArc"></p>
+      <h3>The turn</h3><p id="rTension"></p>
+      <h3>Sit with this</h3><p id="rQ"></p>
+      <p class="disclosure">These interpretations are pre-written reflections from Tarosyn’s editorial card library, assembled on your device — nothing you enter leaves your browser. Tarot is a mirror for reflection, not advice. For medical, legal, financial, or mental-health decisions, talk to a qualified professional.</p>
+    </div>
+    <div class="appcta">
+      <p style="margin:0;font-family:var(--serif);font-size:1.15rem">In the Tarosyn app, readings adapt to your birth chart and remember every card you’ve pulled.</p>
+      <p style="margin:.3em 0 0;color:var(--ink-dim);font-size:.92rem">Save this reading — and see which cards keep finding you.</p>
+      <a class="button" href="https://tarosyn.app/">Open Tarosyn free</a>
+    </div>
+  </section>
+
+  <article class="article">
+    <h2>How to read tarot cards in combination</h2>
+    <p><b>Start with position.</b> Each slot in a spread assigns the card a role. Past, present, future is the classic three, but situation / obstacle / advice or mind / body / spirit work the same way — the card answers its position first, the question second.</p>
+    <p><b>Look for the through-line.</b> Repeated suits concentrate the story: two or more Cups means this is an emotional matter at its core, whatever the question was; Wands make it about energy and ambition; Swords about truth and conflict; Pentacles about the material world. Multiple Major Arcana cards mark a chapter-level event — bigger than habit, slower than a mood. Climbing numbers (a 3, then a 5, then an 8) usually signal building momentum; falling numbers suggest something completing or releasing.</p>
+    <p><b>Read the tension, not just the cards.</b> Adjacent cards interact. Fire (Wands) and Water (Cups) sitting next to each other describe drive and feeling working against each other; Fire beside Air (Swords) feeds each other. The middle card is the hinge — read how you get from the first card to the third, and the middle card tells you what it costs.</p>
+    <p><b>Treat the future position as trajectory, not prophecy.</b> A spread shows where current energy leads if nothing changes. That’s what makes it useful: you’re the variable it can’t account for.</p>
+  </article>
+
+  <footer>
+    <p>© Tarosyn · <a href="https://tarosyn.com/">tarosyn.com</a> · <a href="https://tarosyn.com/legal/">Legal &amp; policies</a></p>
+  </footer>
+</main>
+
+<script>
+(function(){
+"use strict";
+// ---- Editorial card library (pre-written; upright meaning + reflective question) ----
+// s: suit, el: element, r: rank (minors 1-14), kw: keywords for reversed phrasing
+var C=[
+{n:"The Fool",s:"major",el:"air",kw:"beginnings, leaps, unburdened potential",m:"Beginnings, a leap of faith, potential that hasn’t packed its bags yet.",q:"What would you attempt if you packed light?"},
+{n:"The Magician",s:"major",el:"air",kw:"will, skill, tools in hand",m:"Will and resourcefulness — the tools for this are already in your hands.",q:"Which resource are you overlooking because it’s already yours?"},
+{n:"The High Priestess",s:"major",el:"water",kw:"intuition, the unspoken, inner knowing",m:"Intuition and what’s unspoken — the answer is present, but quiet.",q:"What do you already know that you haven’t admitted?"},
+{n:"The Empress",s:"major",el:"earth",kw:"abundance, nurture, creativity",m:"Abundance and nurture — something grows here if it’s fed, not forced.",q:"What needs feeding rather than fixing?"},
+{n:"The Emperor",s:"major",el:"fire",kw:"structure, authority, order",m:"Structure and authority — order, claimed deliberately.",q:"Where would a boundary serve better than a compromise?"},
+{n:"The Hierophant",s:"major",el:"earth",kw:"tradition, teaching, shared belief",m:"Tradition and teaching — the wisdom of a system, or its weight.",q:"Which rule are you following — and who wrote it?"},
+{n:"The Lovers",s:"major",el:"air",kw:"union, values, aligned choice",m:"Union and choice — alignment between what you want and what you value.",q:"Does this choice match who you say you are?"},
+{n:"The Chariot",s:"major",el:"water",kw:"willpower, direction, harnessed opposition",m:"Willpower and direction — opposing forces, harnessed and pointed.",q:"What pulls against you that you could harness instead?"},
+{n:"Strength",s:"major",el:"fire",kw:"quiet courage, patience, taming",m:"Quiet courage — patient power that tames rather than fights.",q:"Where would gentleness outlast force?"},
+{n:"The Hermit",s:"major",el:"earth",kw:"withdrawal, inner guidance, quiet",m:"Withdrawal and inner guidance — a lamp that only lights in quiet.",q:"What answer is only audible in quiet?"},
+{n:"Wheel of Fortune",s:"major",el:"fire",kw:"cycles, turning points, shifting luck",m:"Cycles turning — a shift in fortune that was always going to come.",q:"What’s changing that you’d rather surf than resist?"},
+{n:"Justice",s:"major",el:"air",kw:"truth, accountability, cause and effect",m:"Truth and accountability — cause meeting effect, without flinching.",q:"What would fairness demand here — including from you?"},
+{n:"The Hanged Man",s:"major",el:"water",kw:"suspension, new perspective, sacrifice",m:"Suspension — a new perspective available only once you stop pushing.",q:"What looks different if you stop pushing?"},
+{n:"Death",s:"major",el:"water",kw:"endings, transformation, release",m:"An ending that transforms — release, compost, the clearing before the new.",q:"What are you keeping alive that’s already over?"},
+{n:"Temperance",s:"major",el:"fire",kw:"balance, alchemy, blending",m:"Alchemy and moderation — two things blended into a third.",q:"What two things want mixing instead of choosing?"},
+{n:"The Devil",s:"major",el:"earth",kw:"attachment, shadow, chosen chains",m:"Attachment and shadow — chains that are often looser than they feel.",q:"Which chain is loose enough to slip, if you admitted it was?"},
+{n:"The Tower",s:"major",el:"fire",kw:"rupture, sudden truth, collapse",m:"Rupture — a structure falling that was never as solid as it looked.",q:"What fell that was never as solid as it looked?"},
+{n:"The Star",s:"major",el:"air",kw:"hope, healing, renewal",m:"Hope and quiet healing — renewal that doesn’t announce itself.",q:"What’s beginning to heal that you stopped checking on?"},
+{n:"The Moon",s:"major",el:"water",kw:"uncertainty, dreams, things half-seen",m:"Uncertainty — things half-seen, fear and intuition sharing a voice.",q:"Which fear dissolves in daylight, and which survives it?"},
+{n:"The Sun",s:"major",el:"fire",kw:"joy, vitality, clarity",m:"Joy and vitality — an uncomplicated yes.",q:"Where is simple happiness available right now?"},
+{n:"Judgement",s:"major",el:"fire",kw:"reckoning, calling, second chances",m:"A reckoning and a calling — the past asking to be answered, or answered for.",q:"What version of you is asking to be answered?"},
+{n:"The World",s:"major",el:"earth",kw:"completion, integration, arrival",m:"Completion and integration — a cycle finished, an arrival earned.",q:"What cycle is done, and have you let yourself feel it?"}
+];
+var SUITS=[
+["wands","Wands","fire"],["cups","Cups","water"],["swords","Swords","air"],["pentacles","Pentacles","earth"]
+];
+var MINORS={
+wands:[
+["Ace of Wands","a spark — a new venture or creative impulse asking to be acted on","What idea keeps tugging at you that you haven’t started?"],
+["Two of Wands","planning at the threshold — a vision of what could be, not yet a step","What are you still considering that you’re ready to decide?"],
+["Three of Wands","early momentum — things set in motion, results on their way","Where have you already set things in motion?"],
+["Four of Wands","celebration and stability — a milestone worth actually marking","What deserves to be celebrated before you rush on?"],
+["Five of Wands","friction and competition — clashing priorities, scattered energy","Which conflict is noise, and which is worth engaging?"],
+["Six of Wands","recognition — a win, earned publicly","Where are you underestimating your own progress?"],
+["Seven of Wands","defending your ground — persistence under pressure","What is worth defending even when it’s tiring?"],
+["Eight of Wands","speed and messages — rapid movement, things converging","What wants to move faster than you’re letting it?"],
+["Nine of Wands","guarded resilience — the last stretch, old scars watching","Are you protecting yourself, or just bracing out of habit?"],
+["Ten of Wands","carrying too much — burdens taken on by choice","Which load you’re carrying isn’t actually yours?"],
+["Page of Wands","curiosity — a new enthusiasm, news of an opportunity","What would you try if you didn’t need to be good at it yet?"],
+["Knight of Wands","restless pursuit — bold action, with a risk of burning out","Where is urgency serving you, and where is it just noise?"],
+["Queen of Wands","warm confidence — magnetism and self-assured creative force","What would you do with full trust in your own fire?"],
+["King of Wands","visionary leadership — big-picture command of your energy","What vision needs you to lead it rather than discuss it?"]],
+cups:[
+["Ace of Cups","an emotional opening — new feeling, connection offered","What feeling are you ready to let in?"],
+["Two of Cups","partnership — mutual recognition, a bond meeting itself","Which relationship is asking for honesty right now?"],
+["Three of Cups","friendship and community — joy that’s shared on purpose","Who actually feels like your people?"],
+["Four of Cups","disengagement — an offer going unseen while you stare at the floor","What are you too restless or numb to notice?"],
+["Five of Cups","grief — attention on what’s spilled, not what’s standing","What loss are you still facing, and what stands behind you?"],
+["Six of Cups","nostalgia — kindness from the past, childhood echoes","Which memory is comfort, and which is a hiding place?"],
+["Seven of Cups","options and illusion — many cups, not all of them real","Which option is real, and which is a daydream?"],
+["Eight of Cups","walking away — leaving the good for the meaningful","What have you outgrown but keep returning to?"],
+["Nine of Cups","contentment — the wish card, satisfaction within reach","What does “enough” actually look like for you?"],
+["Ten of Cups","emotional fulfillment — harmony at the hearth","Where is love already complete in your life?"],
+["Page of Cups","sensitivity — a creative feeling, an emotional message arriving","What is your intuition saying in a small voice?"],
+["Knight of Cups","romantic pursuit — following a feeling with charm and risk","Are you following the feeling, or the fantasy of it?"],
+["Queen of Cups","deep empathy — emotional steadiness, care that holds","Can you offer yourself the compassion you give others?"],
+["King of Cups","emotional mastery — calm authority over deep water","What would responding — not reacting — look like here?"]],
+swords:[
+["Ace of Swords","clarity — a cutting truth, a new idea with an edge","What truth have you been circling around?"],
+["Two of Swords","stalemate — an avoided choice, feelings carefully blocked","What decision are you refusing by not deciding?"],
+["Three of Swords","heartbreak — a painful truth that is, at least, true","What hurts precisely because it’s true?"],
+["Four of Swords","rest and recovery — a deliberate pause, not a collapse","What would genuine rest — not collapse — look like?"],
+["Five of Swords","hollow victory — conflict won at a cost worth counting","Is this a fight worth winning, or just winning?"],
+["Six of Swords","transition — rough water behind, calmer ahead","What are you carrying into the next chapter that you could leave?"],
+["Seven of Swords","strategy — discretion, going around rather than through","Where are you being clever when direct would be cleaner?"],
+["Eight of Swords","self-imposed restriction — feeling trapped, loosely bound","Which of these constraints is real, and which is a story?"],
+["Nine of Swords","anxiety — 3am thoughts, catastrophe rehearsed","Is this fear reporting facts, or performing them?"],
+["Ten of Swords","rock bottom — an ending that’s final, and therefore freeing","What is over, and what does the ending make room for?"],
+["Page of Swords","vigilance — sharp observation, restless curiosity","What are you watching that you’re ready to engage?"],
+["Knight of Swords","charging intellect — speed and blunt argument","Where is speed winning over accuracy in your thinking?"],
+["Queen of Swords","incisive clarity — boundaries, truth without cruelty","What needs to be said plainly, once?"],
+["King of Swords","intellectual authority — principled judgment","What would decide this if only the facts were allowed to speak?"]],
+pentacles:[
+["Ace of Pentacles","a tangible opportunity — seed money, a new foundation","What practical first step is being offered?"],
+["Two of Pentacles","juggling — adaptability, resources kept in motion","What’s the real priority under all this balancing?"],
+["Three of Pentacles","craft and collaboration — skill recognized by peers","Whose skill complements yours on this?"],
+["Four of Pentacles","holding tight — security, or scarcity thinking","What are you gripping that no longer needs guarding?"],
+["Five of Pentacles","hardship — feeling left out in the cold","Where is help available that pride is declining?"],
+["Six of Pentacles","generosity — giving and receiving, power in the balance","Is this exchange equal, and does that matter here?"],
+["Seven of Pentacles","assessment — patience with a long-term investment","Is this slow because it’s wrong, or because it’s growing?"],
+["Eight of Pentacles","apprenticeship — deliberate practice, mastery by reps","What rep is this — and what’s it building toward?"],
+["Nine of Pentacles","self-sufficiency — comfort you built yourself","What have you built that you haven’t let yourself enjoy?"],
+["Ten of Pentacles","legacy — lasting foundations, family, the long game","What are you building that should outlast you?"],
+["Page of Pentacles","study — a practical new skill, grounded ambition","What would you learn if the payoff were years away?"],
+["Knight of Pentacles","methodical progress — reliability, the long way round","Where would boring consistency beat brilliance?"],
+["Queen of Pentacles","resourceful nurture — practical care, abundance well managed","How well are you resourcing the life you say you want?"],
+["King of Pentacles","material mastery — stewardship, built to last","What does wealth mean if it isn’t just accumulation?"]]
+};
+SUITS.forEach(function(su){
+  MINORS[su[0]].forEach(function(mn,i){
+    C.push({n:mn[0],s:su[0],el:su[2],r:i+1,kw:mn[1].split("—")[0].trim(),m:mn[1].charAt(0).toUpperCase()+mn[1].slice(1)+".",q:mn[2]});
+  });
+});
+C.forEach(function(c,i){ if(c.r===undefined)c.r=0; c.idx=i; });
+
+var ELNAME={fire:"Fire (Wands)",water:"Water (Cups)",air:"Air (Swords)",earth:"Earth (Pentacles)"};
+var ELSTORY={
+  wands:"Two or more Wands concentrate this spread in Fire — whatever the question was, its engine is energy, ambition, and appetite. The matter moves when you move.",
+  cups:"Two or more Cups concentrate this spread in Water — at its core this is an emotional matter, about connection or feeling, however practical the question sounded.",
+  swords:"Two or more Swords concentrate this spread in Air — this is a question of truth, clarity, or conflict. It will be settled by honesty, not waiting.",
+  pentacles:"Two or more Pentacles concentrate this spread in Earth — underneath everything, this is about the material world: body, money, work, what’s built to last."
+};
+var OPP={fire:"water",water:"fire",air:"earth",earth:"air"};
+
+// ---- Build UI ----
+var slotsEl=document.getElementById("slots");
+var DEFAULT_POS=["Past","Present","Future"];
+var slots=[];
+function cardOptions(){
+  var html='<option value="">— choose a card —</option>';
+  html+='<optgroup label="Major Arcana">';
+  C.forEach(function(c){ if(c.s==="major") html+='<option value="'+c.idx+'">'+c.n+'</option>'; });
+  html+='</optgroup>';
+  SUITS.forEach(function(su){
+    html+='<optgroup label="'+su[1]+'">';
+    C.forEach(function(c){ if(c.s===su[0]) html+='<option value="'+c.idx+'">'+c.n+'</option>'; });
+    html+='</optgroup>';
+  });
+  return html;
+}
+var opts=cardOptions();
+for(var i=0;i<3;i++){
+  var d=document.createElement("div");
+  d.className="slot";
+  d.innerHTML='<label>Position '+(i+1)+'</label>'+
+    '<input type="text" class="pos" value="'+DEFAULT_POS[i]+'" maxlength="24">'+
+    '<label style="margin-top:.5rem">Card</label>'+
+    '<select class="card">'+opts+'</select>'+
+    '<label class="rev"><input type="checkbox" class="revbox"> Reversed</label>';
+  slotsEl.appendChild(d);
+  slots.push({pos:d.querySelector(".pos"),card:d.querySelector(".card"),rev:d.querySelector(".revbox")});
+}
+
+// ---- Intention framing ----
+function bucket(t){
+  t=(t||"").toLowerCase();
+  if(/love|relationship|partner|crush|boyfriend|girlfriend|marriage|dating|ex\b/.test(t)) return {label:"relationships",line:"Relationships run on what’s unspoken as much as what’s said — read the emotional cards twice."};
+  if(/job|career|work|money|business|promotion|fired|interview|salary/.test(t)) return {label:"work",line:"Work questions are usually identity questions in a costume — notice which cards talk about who you’re becoming, not just what you’ll earn."};
+  if(/should|decide|decision|choice|move|stay|leave|quit/.test(t)) return {label:"a decision",line:"A spread rarely says yes or no — it shows what each door costs."};
+  if(/sad|anxious|anxiety|lost|stuck|depressed|lonely|overwhelm/.test(t)) return {label:"how you’re feeling",line:"Naming the feeling precisely is most of the work; let the cards help you name it, not fix it."};
+  if(t.trim()) return {label:"your question",line:"Hold your question loosely — the cards answer the situation, not the wording."};
+  return {label:"",line:""};
+}
+
+// ---- Reading engine ----
+function read(){
+  var err=document.getElementById("err");
+  err.textContent="";
+  var picks=[];
+  for(var i=0;i<3;i++){
+    var v=slots[i].card.value;
+    if(v===""){ err.textContent="Choose a card for all three positions."; return; }
+    picks.push({c:C[parseInt(v,10)],rev:slots[i].rev.checked,pos:slots[i].pos.value.trim()||DEFAULT_POS[i]});
+  }
+  var seen={};
+  for(var j=0;j<3;j++){ if(seen[picks[j].c.idx]){ err.textContent="Each card can only appear once in a spread — a deck has no duplicates."; return; } seen[picks[j].c.idx]=1; }
+
+  // Per-card lines
+  var rc=document.getElementById("rCards");
+  rc.innerHTML="";
+  picks.forEach(function(p){
+    var div=document.createElement("div");
+    div.className="cardline";
+    var b=document.createElement("b");
+    b.textContent=p.c.n+(p.rev?" (reversed)":"")+" — "+p.pos+": ";
+    div.appendChild(b);
+    var span=document.createElement("span");
+    span.textContent=p.rev
+      ? "Reversed, this energy turns inward, stalls, or arrives late: "+p.c.kw+". The theme is present; the flow is blocked."
+      : p.c.m;
+    div.appendChild(span);
+    rc.appendChild(div);
+  });
+  document.getElementById("rTitle").textContent=picks[0].c.n+" · "+picks[1].c.n+" · "+picks[2].c.n;
+
+  // Through-line
+  var majors=picks.filter(function(p){return p.c.s==="major";}).length;
+  var suitCount={};
+  picks.forEach(function(p){ if(p.c.s!=="major") suitCount[p.c.s]=(suitCount[p.c.s]||0)+1; });
+  var topSuit=null,topN=0;
+  Object.keys(suitCount).forEach(function(k){ if(suitCount[k]>topN){topN=suitCount[k];topSuit=k;} });
+  var minors=picks.filter(function(p){return p.c.s!=="major";});
+  var arc;
+  if(majors>=2){
+    arc="This is a Major-Arcana-heavy spread — the kind that marks a chapter, not a day. The forces here are larger than habit: read what follows as a season turning, not a mood passing.";
+  } else if(topN>=2){
+    arc=ELSTORY[topSuit];
+  } else if(minors.length===3){
+    var rs=picks.map(function(p){return p.c.r;});
+    if(rs[0]<rs[1]&&rs[1]<rs[2]) arc="The numbers climb from "+rs[0]+" to "+rs[2]+" — momentum is building across this spread. Something is compounding; the trajectory matters more than any single card.";
+    else if(rs[0]>rs[1]&&rs[1]>rs[2]) arc="The numbers fall from "+rs[0]+" to "+rs[2]+" — this spread describes something completing or releasing. Let it finish; don’t refill what’s emptying on purpose.";
+    else arc="Three cards from three different corners of the deck — this spread spans separate arenas of your life rather than one concentrated theme. The connection between them is the message.";
+  } else {
+    arc="Major and minor arcana share this spread — one big theme playing out through ordinary days. Watch how the large pattern shows up in small moments.";
+  }
+  document.getElementById("rArc").textContent=arc;
+
+  // Tension / turn
+  var tension="";
+  var found=false;
+  for(var k=0;k<2;k++){
+    var a=picks[k],b=picks[k+1];
+    if(OPP[a.c.el]===b.c.el){
+      tension="Between "+a.pos+" and "+b.pos+", "+ELNAME[a.c.el]+" meets "+ELNAME[b.c.el]+" — opposing elements. Something in the "+a.pos.toLowerCase()+" position works against what the "+b.pos.toLowerCase()+" position wants; the turn of this spread lives in that friction.";
+      found=true; break;
+    }
+  }
+  if(!found){
+    for(var k2=0;k2<2;k2++){
+      var a2=picks[k2],b2=picks[k2+1];
+      if(a2.c.el===b2.c.el){
+        tension=ELNAME[a2.c.el]+" repeats between "+a2.pos+" and "+b2.pos+" — the same element amplifying itself. Whatever that element governs is the loudest voice in this reading; ask whether it’s drowning something out.";
+        found=true; break;
+      }
+    }
+  }
+  if(!found){
+    tension="The elements here cooperate rather than collide — "+picks[0].c.el+", "+picks[1].c.el+", "+picks[2].c.el+" feed into each other. The turn of this spread is not a conflict but a handoff: notice where "+picks[0].pos.toLowerCase()+" passes the story to "+picks[1].pos.toLowerCase()+".";
+  }
+  var anyRev=picks.some(function(p){return p.rev;});
+  if(anyRev){
+    var rpos=picks.filter(function(p){return p.rev;}).map(function(p){return p.pos;}).join(" and ");
+    tension+=" A reversed card in the "+rpos+" position marks where the energy is stuck, internalized, or running late — that’s the position to work on first.";
+  }
+  tension+=" The middle card — "+picks[1].c.n+" — is the hinge: it describes what it costs to get from "+picks[0].c.n+" to "+picks[2].c.n+".";
+  document.getElementById("rTension").textContent=tension;
+
+  // Reflective question
+  var bk=bucket(document.getElementById("intention").value);
+  var q=(bk.line?bk.line+" ":"")+picks[1].c.q;
+  document.getElementById("rQ").textContent=q;
+
+  document.getElementById("output").hidden=false;
+  document.getElementById("output").scrollIntoView({behavior:"smooth",block:"start"});
+}
+document.getElementById("readBtn").addEventListener("click",read);
+})();
+</script>
+</body>
+</html>
