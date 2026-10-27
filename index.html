@@ -15,20 +15,27 @@
   <meta property="og:url" content="https://tarosyn.com/">
   <meta property="og:title" content="Tarosyn — Tarot That Remembers You">
   <meta property="og:description" content="Personalized tarot and astrology that deepens with every reading. Start free in 90 seconds.">
-  <meta property="og:image" content="https://tarosyn.com/assets/tarosyn-brand.png">
+  <meta property="og:image" content="https://tarosyn.com/assets/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Tarosyn cosmic tarot and astrology artwork">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Tarosyn — Tarot That Remembers You">
   <meta name="twitter:description" content="Personalized tarot and astrology that deepens with every reading.">
-  <meta name="twitter:image" content="https://tarosyn.com/assets/tarosyn-brand.png">
+  <meta name="twitter:image" content="https://tarosyn.com/assets/og-image.jpg">
+  <meta name="twitter:image:alt" content="Tarosyn — You're a Star Design: tarot cards beneath a glowing crescent moon">
   <title>Tarosyn — Personalized Tarot That Remembers You</title>
-  <link rel="icon" href="assets/tarosyn-icon.png">
-  <link rel="manifest" href="site.webmanifest">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://tarosyn.com/#organization","name":"Tarosyn","url":"https://tarosyn.com/","logo":"https://tarosyn.com/assets/tarosyn-icon.png","email":"joseph@tarosyn.com","sameAs":["https://www.instagram.com/tarosynapp/","https://www.tiktok.com/@tarosynapp","https://x.com/Tarosynapp"]},{"@type":"WebSite","@id":"https://tarosyn.com/#website","url":"https://tarosyn.com/","name":"Tarosyn","publisher":{"@id":"https://tarosyn.com/#organization"},"inLanguage":"en"},{"@type":"SoftwareApplication","name":"Tarosyn","url":"https://tarosyn.app","applicationCategory":"LifestyleApplication","operatingSystem":"Web","description":"Personalized tarot and astrology readings shaped by your birth chart, past cards, and reflections.","offers":[{"@type":"Offer","name":"Free","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Mystic Monthly","price":"9.99","priceCurrency":"USD"}]}]}</script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=5">
+  <link rel="preload" href="/assets/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/tarosyn-mobile-cards.webp" as="image" type="image/webp" fetchpriority="high">
+  <script>document.documentElement.classList.add("js")</script>
+  <link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -36,7 +43,7 @@
   <header class="site-header" data-header>
     <div class="nav-wrap">
       <a class="brand" href="#top" aria-label="Tarosyn home">
-        <picture><source type="image/webp" srcset="assets/tarosyn-icon.webp"><img src="assets/tarosyn-icon.png" alt="" width="42" height="42"></picture>
+        <picture><source type="image/webp" srcset="assets/tarosyn-icon-84.webp"><img decoding="async" src="assets/tarosyn-icon-84.png" alt="" width="42" height="42"></picture>
         <span>TAROSYN</span>
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav"><span>Menu</span><i aria-hidden="true"></i></button>
@@ -76,7 +83,7 @@
           <div class="orbit orbit-two" aria-hidden="true"></div>
           <picture class="hero-art">
             <source type="image/webp" srcset="assets/tarosyn-mobile-cards.webp">
-            <img src="assets/tarosyn-mobile-cards.jpg" alt="Three celestial Tarosyn cards arranged over a glowing zodiac chart" fetchpriority="high">
+            <img decoding="async" src="assets/tarosyn-mobile-cards.jpg" alt="Three celestial Tarosyn cards arranged over a glowing zodiac chart" width="853" height="1280" fetchpriority="high">
           </picture>
           <div class="reading-chip chip-one"><small>Your reading remembers</small><strong>Past cards + reflections</strong></div>
           <div class="reading-chip chip-two"><small>Your cosmic layer</small><strong>Birth chart + transits</strong></div>
@@ -146,8 +153,8 @@
           <a class="text-link gold-link" data-cta="hero-card" href="https://tarosyn.app">Forge your first Hero Card <span aria-hidden="true">→</span></a>
         </div>
         <div class="before-after reveal reveal-delay" aria-label="Photo to personalized Tarosyn Hero Card transformation">
-          <figure><picture><source type="image/webp" srcset="assets/tarotfication-before.webp"><img src="assets/tarotfication-before.jpg" alt="Original photo before Tarosyn Hero Card transformation" loading="lazy"></picture><figcaption>Your photo</figcaption></figure>
-          <figure class="after-card"><picture><source type="image/webp" srcset="assets/tarotfication-after.webp"><img src="assets/tarotfication-after.jpg" alt="Personalized Tarosyn Hero Card after transformation" loading="lazy"></picture><figcaption>Your Hero Card</figcaption></figure>
+          <figure><picture><source type="image/webp" srcset="assets/tarotfication-before.webp"><img decoding="async" src="assets/tarotfication-before.jpg" alt="Original photo before Tarosyn Hero Card transformation" width="640" height="677" loading="lazy"></picture><figcaption>Your photo</figcaption></figure>
+          <figure class="after-card"><picture><source type="image/webp" srcset="assets/tarotfication-after.webp"><img decoding="async" src="assets/tarotfication-after.jpg" alt="Personalized Tarosyn Hero Card after transformation" width="640" height="960" loading="lazy"></picture><figcaption>Your Hero Card</figcaption></figure>
         </div>
       </div>
     </section>
@@ -159,9 +166,9 @@
           <p>Tarosyn connects the moments that usually live in separate apps: the reading, the chart, the journal, and the people you trust.</p>
         </div>
         <div class="proof-grid">
-          <article class="proof-card proof-wide reveal"><div class="proof-copy"><span>THE MEMORY LAYER</span><h3>Your vault reveals the pattern.</h3><p>Every reading, recurring card, and reflection lives in one private timeline. Look back across weeks or months and notice what keeps asking for your attention.</p></div><picture><source type="image/webp" srcset="assets/mystics/oracle.webp"><img src="assets/mystics/oracle.png" alt="The Oracle, one of Tarosyn's mystic guides" loading="lazy"></picture></article>
-          <article class="proof-card reveal"><div class="proof-copy"><span>THE COSMIC LAYER</span><h3>Your chart changes the interpretation.</h3><p>Add your birth details once. Natal placements, lunar cycles, and transits become meaningful context—not decorative data.</p></div><picture><source type="image/webp" srcset="assets/mystics/luna.webp"><img src="assets/mystics/luna.png" alt="Luna, a lunar mystic guide in Tarosyn" loading="lazy"></picture></article>
-          <article class="proof-card reveal reveal-delay"><div class="proof-copy"><span>THE HUMAN LAYER</span><h3>Reflect alone. Connect by choice.</h3><p>Share a reading, explore synastry, or invite friends into your circle without making your private practice public.</p></div><picture><source type="image/webp" srcset="assets/mystics/raven.webp"><img src="assets/mystics/raven.png" alt="Raven, a Tarosyn mystic guide" loading="lazy"></picture></article>
+          <article class="proof-card proof-wide reveal"><div class="proof-copy"><span>THE MEMORY LAYER</span><h3>Your vault reveals the pattern.</h3><p>Every reading, recurring card, and reflection lives in one private timeline. Look back across weeks or months and notice what keeps asking for your attention.</p></div><picture><source type="image/webp" srcset="assets/mystics/oracle.webp"><img decoding="async" src="assets/mystics/oracle.jpg" width="896" height="1280" alt="The Oracle, one of Tarosyn's mystic guides" loading="lazy"></picture></article>
+          <article class="proof-card reveal"><div class="proof-copy"><span>THE COSMIC LAYER</span><h3>Your chart changes the interpretation.</h3><p>Add your birth details once. Natal placements, lunar cycles, and transits become meaningful context—not decorative data.</p></div><picture><source type="image/webp" srcset="assets/mystics/luna.webp"><img decoding="async" src="assets/mystics/luna.jpg" width="896" height="1280" alt="Luna, a lunar mystic guide in Tarosyn" loading="lazy"></picture></article>
+          <article class="proof-card reveal reveal-delay"><div class="proof-copy"><span>THE HUMAN LAYER</span><h3>Reflect alone. Connect by choice.</h3><p>Share a reading, explore synastry, or invite friends into your circle without making your private practice public.</p></div><picture><source type="image/webp" srcset="assets/mystics/raven.webp"><img decoding="async" src="assets/mystics/raven.jpg" width="896" height="1280" alt="Raven, a Tarosyn mystic guide" loading="lazy"></picture></article>
         </div>
       </div>
     </section>
@@ -259,16 +266,16 @@
 
   <footer>
     <div class="shell footer-grid">
-      <div class="footer-brand"><a class="brand" href="#top"><picture><source type="image/webp" srcset="assets/tarosyn-icon.webp"><img src="assets/tarosyn-icon.png" alt="" width="42" height="42"></picture><span>TAROSYN</span></a><p>Tarot that remembers you. A personal practice shaped by your chart, your cards, and your reflections.</p><div class="social-links"><a href="https://www.instagram.com/tarosynapp/">Instagram</a><a href="https://x.com/Tarosynapp">X</a><a href="https://www.tiktok.com/@tarosynapp">TikTok</a></div></div>
+      <div class="footer-brand"><a class="brand" href="#top"><picture><source type="image/webp" srcset="assets/tarosyn-icon-84.webp"><img decoding="async" src="assets/tarosyn-icon-84.png" alt="" width="42" height="42" loading="lazy"></picture><span>TAROSYN</span></a><p>Tarot that remembers you. A personal practice shaped by your chart, your cards, and your reflections.</p><div class="social-links"><a href="https://www.instagram.com/tarosynapp/">Instagram</a><a href="https://x.com/Tarosynapp">X</a><a href="https://www.tiktok.com/@tarosynapp">TikTok</a></div></div>
       <div><h3>Explore</h3><a href="#how-it-works">How it works</a><a href="#why-tarosyn">Why Tarosyn</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
           <a href="https://tarosyn.app/wiki">Wiki</a></div>
       <div><h3>Tarosyn</h3><a href="https://tarosyn.app">Enter the app</a><a href="https://tarosyn.app/login">Sign in</a><a href="project.html">Project record</a><a href="mailto:joseph@tarosyn.com">Contact</a></div>
       <div><h3>Legal</h3><a href="/legal/privacy/">Privacy</a><a href="/legal/terms/">Terms</a><a href="/legal/">All policies</a><p>Readings are for entertainment and self-reflection purposes only.</p></div>
     </div>
-    <div class="shell footer-legal"><span>© <span id="year"></span> Tarosyn LLC</span><span>You’re a star design.</span></div>
+    <div class="shell footer-legal"><span>© <span id="year">2026</span> Tarosyn LLC</span><span>You’re a star design.</span></div>
   </footer>
 
   <a class="mobile-cta" data-cta="mobile-sticky" href="https://tarosyn.app"><span>Start free</span><small>No card required</small></a>
-  <script src="script.js?v=5"></script>
+  <script src="script.js?v=6" defer></script>
 </body>
 </html>

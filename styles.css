@@ -1,3 +1,22 @@
+/* Self-hosted fonts (latin subset, variable weight) — no third-party font requests */
+@font-face {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 100 1000;
+  font-display: swap;
+  src: url("assets/fonts/dm-sans-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("assets/fonts/playfair-display-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 :root {
   --bg: #07030d;
   --bg-deep: #030106;
@@ -311,7 +330,7 @@ body.nav-open .site-header {
 .hero::before {
   position: absolute;
   inset: 0;
-  background-image: url("assets/tarosyn-bg.png");
+  background-image: url("assets/tarosyn-bg.jpg");
   background-position: center;
   background-size: min(1000px, 85vw);
   content: "";
@@ -322,7 +341,7 @@ body.nav-open .site-header {
 
 @supports (background-image: image-set(url("x.webp") type("image/webp"))) {
   .hero::before {
-    background-image: image-set(url("assets/tarosyn-bg.webp") type("image/webp"), url("assets/tarosyn-bg.png") type("image/png"));
+    background-image: image-set(url("assets/tarosyn-bg.webp") type("image/webp"), url("assets/tarosyn-bg.jpg") type("image/jpeg"));
   }
 }
 
@@ -1471,6 +1490,15 @@ footer {
     transition: opacity 0.2s ease, visibility 0.2s ease;
   }
 
+  body.nav-open .site-header {
+    min-height: 100dvh;
+  }
+
+  body.nav-open .brand {
+    position: relative;
+    z-index: 2;
+  }
+
   .nav-open .primary-nav {
     visibility: visible;
     opacity: 1;
@@ -1937,6 +1965,222 @@ footer {
     transform: none;
   }
 }
-  body.nav-open .site-header {
-    min-height: 100dvh;
+
+/* ------------------------------------------------------------------
+   Polish pass (2026-10): rhythm, readability, states, tap targets
+   ------------------------------------------------------------------ */
+.section {
+  padding-block: clamp(80px, 10vw, 128px);
+}
+
+.section-title,
+.final-cta h2,
+.hero h1,
+.proof-copy h3,
+.comparison-card h3,
+.step-card h3 {
+  text-wrap: balance;
+}
+
+.section-lede,
+.section-heading > p,
+.faq-list details p,
+.final-cta p:not(.eyebrow),
+.proof-copy p {
+  text-wrap: pretty;
+}
+
+.section-lede {
+  max-width: 62ch;
+}
+
+.section-lede.centered {
+  margin-inline: auto;
+}
+
+/* Buttons: clearer pressed state, consistent tap size */
+.button-small {
+  min-height: 44px;
+}
+
+.button-quiet:hover {
+  border-color: rgba(211, 178, 255, 0.5);
+  background: rgba(119, 68, 163, 0.26);
+}
+
+.button-gold:hover {
+  box-shadow: 0 18px 48px rgba(212, 149, 58, 0.34), inset 0 1px rgba(255, 255, 255, 0.4);
+}
+
+.button:active,
+.mobile-cta:active {
+  filter: brightness(0.96);
+  transform: translateY(0) scale(0.98);
+}
+
+/* Focus rings that stay visible on every surface */
+.button:focus-visible,
+.mobile-cta:focus-visible {
+  outline: 3px solid var(--gold-bright);
+  outline-offset: 3px;
+}
+
+.faq-list summary:focus-visible,
+.footer-grid a:focus-visible,
+.social-links a:focus-visible,
+.text-link:focus-visible,
+.brand:focus-visible {
+  border-radius: 6px;
+  outline-offset: 3px;
+}
+
+/* Cards: subtle lift on devices that can hover */
+.price-card,
+.proof-card,
+.objection-grid article {
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+@media (hover: hover) {
+  .price-card:hover {
+    border-color: var(--line-strong);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+    transform: translateY(-4px);
   }
+
+  .premium-plan:hover {
+    border-color: rgba(239, 200, 121, 0.7);
+  }
+
+  .proof-card:hover {
+    border-color: var(--line-strong);
+  }
+
+  .proof-card img {
+    transition: transform 0.6s ease, filter 0.4s ease;
+  }
+
+  .proof-card:hover img {
+    filter: saturate(0.95) brightness(0.8);
+    transform: scale(1.025);
+  }
+
+  .objection-grid article:hover {
+    border-color: rgba(239, 200, 121, 0.45);
+  }
+}
+
+@media (hover: hover) and (min-width: 1181px) {
+  .premium-plan:hover {
+    transform: translateY(-18px);
+  }
+}
+
+/* Pricing: equal-height cards, feature lists top-aligned, CTAs on one baseline */
+.price-card {
+  justify-content: flex-start;
+}
+
+.price-card ul {
+  flex: 1 1 auto;
+  align-content: start;
+}
+
+.price-card .button {
+  margin-top: auto;
+}
+
+/* FAQ polish */
+.faq-list summary {
+  transition: color 0.2s ease;
+}
+
+.faq-list summary:hover,
+.faq-list details[open] summary {
+  color: #fff;
+}
+
+.faq-list details[open] summary::after {
+  color: var(--gold-bright);
+}
+
+.faq-list details[open] p {
+  animation: faq-in 0.28s ease both;
+}
+
+@keyframes faq-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Image aspect stability (no layout shift while images load) */
+.before-after img,
+.proof-card img,
+.hero-art img {
+  background: #120a1c;
+}
+
+@media (max-width: 860px) {
+  .section {
+    padding-block: clamp(72px, 12vw, 96px);
+  }
+
+  /* 44px minimum tap targets in the footer and mobile menu */
+  .footer-grid > div:not(.footer-brand) {
+    gap: 0;
+  }
+
+  .footer-grid > div:not(.footer-brand) a,
+  .social-links a,
+  .text-link,
+  .trust-list a,
+  .brand {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+  }
+
+  .footer-grid > div:not(.footer-brand) p {
+    margin-top: 8px;
+  }
+
+  .primary-nav > a:not(.button) {
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-toggle {
+    min-width: 44px;
+    padding-inline: 4px;
+  }
+
+}
+
+@media (max-width: 620px) {
+  /* Leave room so the sticky CTA never covers the footer text */
+  footer {
+    padding-bottom: calc(96px + env(safe-area-inset-bottom));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .price-card:hover,
+  .premium-plan:hover,
+  .proof-card:hover img,
+  .button:hover,
+  .step-card:hover {
+    transform: none;
+  }
+
+  .faq-list details[open] p {
+    animation: none;
+  }
+}
