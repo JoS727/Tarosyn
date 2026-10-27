@@ -7,11 +7,13 @@
   <meta name="robots" content="noindex,follow">
   <meta name="description" content="That page isn't here. Head back to tarosyn.com or open the app.">
   <title>Page not found — Tarosyn</title>
-  <link rel="icon" href="/assets/tarosyn-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css?v=5">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preload" href="/assets/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=6">
   <style>
     .nf-wrap{min-height:100svh;display:flex;flex-direction:column}
     .nf-main{flex:1;display:flex;align-items:center;justify-content:center;padding:6rem 1.25rem}
@@ -29,7 +31,7 @@
     <header class="site-header">
       <div class="nav-wrap">
         <a class="brand" href="/" aria-label="Tarosyn home">
-          <picture><source type="image/webp" srcset="/assets/tarosyn-icon.webp"><img src="/assets/tarosyn-icon.png" alt="" width="42" height="42"></picture>
+          <picture><source type="image/webp" srcset="/assets/tarosyn-icon-84.webp"><img decoding="async" src="/assets/tarosyn-icon-84.png" alt="" width="42" height="42"></picture>
           <span>TAROSYN</span>
         </a>
       </div>
@@ -53,7 +55,7 @@
     </main>
 
     <footer>
-      <div class="shell footer-legal"><span>© <span id="year"></span> Tarosyn LLC</span><span>You're a star design.</span></div>
+      <div class="shell footer-legal"><span>© <span id="year">2026</span> Tarosyn LLC</span><span>You're a star design.</span></div>
     </footer>
   </div>
   <script>document.getElementById("year").textContent=new Date().getFullYear();</script>

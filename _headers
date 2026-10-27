@@ -1,0 +1,28 @@
+# Cloudflare Pages response headers for tarosyn.com
+# https://developers.cloudflare.com/pages/configuration/headers/
+
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://cloudflareinsights.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests
+
+# Long-lived caching for static brand assets. Files under /assets are
+# referenced with stable names, so keep this at one week rather than
+# "immutable" until filenames are content-hashed.
+/assets/*
+  Cache-Control: public, max-age=604800
+
+# Raw brand-storage folders are not part of the site; keep them out of search.
+/tarosyn-deck-art/*
+  X-Robots-Tag: noindex
+/tarosyn-user-art/*
+  X-Robots-Tag: noindex
+/logogif/*
+  X-Robots-Tag: noindex
+/tools/*
+  X-Robots-Tag: noindex
+/legal.zip
+  X-Robots-Tag: noindex
