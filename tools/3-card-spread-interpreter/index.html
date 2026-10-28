@@ -4,9 +4,10 @@
   Draft asset from CJC growth lane, 2026-10-20. Human-edit before ship.
   - No backend, no AI calls, no tracking included. All interpretation runs client-side
     from the editorial card library below (pre-written copy, NOT AI-generated on demand).
-  - TODO before deploy: (1) wire analytics events: tool_used, cta_clicked
-    (2) brand tokens (fonts/colors) to match tarosyn.com design system
-    (3) add page to sitemap.xml  (4) QA on phone viewport
+  - DONE 2026-10-27 (CJC lane, uncommitted): GA4 gtag (G-BZFQJ5J4Y5) + tool_used/cta_clicked
+    events + UTM'd CTA; sitemap.xml entry added. STILL OPEN: brand tokens to match
+    tarosyn.com design system; QA on phone viewport. NOTE: page is already LIVE without
+    these fixes — diff live vs this file before redeploying (founder may have edited at ship time).
 -->
 <html lang="en">
 <head>
@@ -84,6 +85,15 @@
   a{color:var(--accent)}
   .error{color:#ff9d9d;font-size:.9rem;text-align:center;margin-top:.6rem;min-height:1.2em}
 </style>
+<!-- GA4 (same property as app, G-BZFQJ5J4Y5) — added 2026-10-27 by CJC lane.
+     Gives the tool page page_view + the two pre-registered events (tool_used, cta_clicked). -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BZFQJ5J4Y5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BZFQJ5J4Y5');
+</script>
 </head>
 <body>
 <main>
@@ -115,7 +125,7 @@
     <div class="appcta">
       <p style="margin:0;font-family:var(--serif);font-size:1.15rem">In the Tarosyn app, readings adapt to your birth chart and remember every card you’ve pulled.</p>
       <p style="margin:.3em 0 0;color:var(--ink-dim);font-size:.92rem">Save this reading — and see which cards keep finding you.</p>
-      <a class="button" href="https://tarosyn.app/">Open Tarosyn free</a>
+      <a class="button" id="ctaLink" href="https://tarosyn.app/?utm_source=marketing_site&utm_medium=seo_tool&utm_campaign=3card_interpreter&utm_content=cta">Open Tarosyn free</a>
     </div>
   </section>
 
@@ -374,6 +384,24 @@ function read(){
   document.getElementById("output").scrollIntoView({behavior:"smooth",block:"start"});
 }
 document.getElementById("readBtn").addEventListener("click",read);
+})();
+</script>
+<script>
+/* CJC analytics wiring (2026-10-27): fires the two pre-registered events.
+   tool_used  = a reading was actually rendered (#output unhidden — decoupled from read() internals)
+   cta_clicked = click on the app CTA link */
+(function(){
+  if (typeof gtag !== 'function') return;
+  var out = document.getElementById('output');
+  if (out && 'MutationObserver' in window) {
+    new MutationObserver(function(muts){
+      muts.forEach(function(m){
+        if (m.attributeName === 'hidden' && !out.hidden) gtag('event','tool_used',{page:'3-card-spread-interpreter'});
+      });
+    }).observe(out, {attributes:true});
+  }
+  var cta = document.getElementById('ctaLink');
+  if (cta) cta.addEventListener('click', function(){ gtag('event','cta_clicked',{page:'3-card-spread-interpreter'}); });
 })();
 </script>
 </body>
