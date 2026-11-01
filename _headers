@@ -17,7 +17,10 @@
 
 # Non-site files; keep them out of search. (Unused brand storage now lives on
 # the archive/brand-assets-2026-11 branch, not on the deployed site.)
-/tools/*
+# Maintenance scripts only; the public tools under /tools/<name>/ stay indexable.
+/tools/check-site.py
+  X-Robots-Tag: noindex
+/tools/webpify.mjs
   X-Robots-Tag: noindex
 /legal.zip
   X-Robots-Tag: noindex
