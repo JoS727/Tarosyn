@@ -1,4 +1,4 @@
-# TarosynBrand
+# Tarosyn — tarosyn.com brand site
 
 The independent static extraction of Tarosyn's existing public **Guest Onboarding** landing page.
 
@@ -19,6 +19,19 @@ Deploy this repository directly to the static host used by `tarosyn.com` so the 
 - `assets/` — local Tarosyn brand assets copied from the app's public asset library
 - `robots.txt` and `sitemap.xml` — crawler discovery for `tarosyn.com`
 - `site.webmanifest` — browser/app identity metadata
+- `404.html` — branded not-found page
+- `_redirects` — Cloudflare Pages redirects (`/wiki` → `tarosyn.app/wiki`)
+- `_headers` — Cloudflare Pages security headers, asset caching, and `noindex` for raw brand-storage folders
+- `legal/` — published legal policies (`legal/legal.css` styles them; use root-absolute asset paths such as `/styles.css`)
+- `legal.zip` — archive of `legal/` (regenerate with `zip -qr legal.zip legal` after legal edits)
+- `tools/check-site.py` — link, sitemap, and file-size checks (run in CI: `python3 tools/check-site.py`)
+- `tools/webpify.mjs` — one-off asset utility
+- `assets/analytics.js` — GA4 (`G-BZFQJ5J4Y5`, shared with tarosyn.app, cross-domain linked) with Consent Mode defaults; loaded on every page
+- Unused brand storage (deck art, logo frames, root PNGs, card borders) was moved to the `archive/brand-assets-2026-11` branch — see its `ARCHIVE_README.md` to restore a file
+
+## Pricing source of truth
+
+Plan names, prices, and Kuu$ allowances on this site must match the app (`JoS727/Tarosyn-Production`: `shared/contracts/tiers.ts` and the tier-settings defaults in `server/routes.ts`). Live tiers: Seeker (free), Mystic, Creator, Angel. Seer, Founder, and Grand Master are retired aliases and must not be marketed.
 
 ## SEO and discovery
 

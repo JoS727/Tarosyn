@@ -89,6 +89,36 @@
   color: var(--purple-bright);
 }
 
+.legal-doc h3 {
+  font-size: 1.02rem;
+  margin: 28px 0 10px;
+  color: #efe6f7;
+}
+
+.legal-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0 22px;
+  font-size: 0.94rem;
+  display: block;
+  overflow-x: auto;
+}
+
+.legal-table th,
+.legal-table td {
+  border: 1px solid var(--line);
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+  color: #d9cfe4;
+  line-height: 1.55;
+}
+
+.legal-table th {
+  color: var(--gold-bright);
+  font-weight: 600;
+}
+
 .legal-footer {
   border-top: 1px solid var(--line);
   padding: 30px 0 48px;
