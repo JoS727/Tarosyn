@@ -7,7 +7,7 @@
   X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://cloudflareinsights.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; connect-src 'self' https://cloudflareinsights.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests
 
 # Long-lived caching for static brand assets. Files under /assets are
 # referenced with stable names, so keep this at one week rather than
@@ -15,13 +15,8 @@
 /assets/*
   Cache-Control: public, max-age=604800
 
-# Raw brand-storage folders are not part of the site; keep them out of search.
-/tarosyn-deck-art/*
-  X-Robots-Tag: noindex
-/tarosyn-user-art/*
-  X-Robots-Tag: noindex
-/logogif/*
-  X-Robots-Tag: noindex
+# Non-site files; keep them out of search. (Unused brand storage now lives on
+# the archive/brand-assets-2026-11 branch, not on the deployed site.)
 /tools/*
   X-Robots-Tag: noindex
 /legal.zip

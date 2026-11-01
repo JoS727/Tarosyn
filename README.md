@@ -25,8 +25,9 @@ Deploy this repository directly to the static host used by `tarosyn.com` so the 
 - `legal/` — published legal policies (`legal/legal.css` styles them; use root-absolute asset paths such as `/styles.css`)
 - `legal.zip` — archive of `legal/` (regenerate with `zip -qr legal.zip legal` after legal edits)
 - `tools/check-site.py` — link, sitemap, and file-size checks (run in CI: `python3 tools/check-site.py`)
-- `tools/webpify.mjs`, `fix-cardborder-alpha.py` — one-off asset utilities
-- `tarosyn-deck-art/`, `tarosyn-user-art/`, `logogif/`, root PNGs — brand storage (not referenced by pages; served but `noindex`)
+- `tools/webpify.mjs` — one-off asset utility
+- `assets/analytics.js` — GA4 (`G-BZFQJ5J4Y5`, shared with tarosyn.app, cross-domain linked) with Consent Mode defaults; loaded on every page
+- Unused brand storage (deck art, logo frames, root PNGs, card borders) was moved to the `archive/brand-assets-2026-11` branch — see its `ARCHIVE_README.md` to restore a file
 
 ## Pricing source of truth
 
