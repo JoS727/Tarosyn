@@ -30,12 +30,13 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://tarosyn.com/#organization","name":"Tarosyn","url":"https://tarosyn.com/","logo":"https://tarosyn.com/assets/tarosyn-icon.png","email":"joseph@tarosyn.com","sameAs":["https://www.instagram.com/tarosynapp/","https://www.tiktok.com/@tarosynapp","https://x.com/Tarosynapp"]},{"@type":"WebSite","@id":"https://tarosyn.com/#website","url":"https://tarosyn.com/","name":"Tarosyn","publisher":{"@id":"https://tarosyn.com/#organization"},"inLanguage":"en"},{"@type":"SoftwareApplication","name":"Tarosyn","url":"https://tarosyn.app","applicationCategory":"LifestyleApplication","operatingSystem":"Web","description":"Personalized tarot and astrology readings shaped by your birth chart, past cards, and reflections.","offers":[{"@type":"Offer","name":"Free","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Mystic Monthly","price":"9.99","priceCurrency":"USD"},{"@type":"Offer","name":"Mystic Yearly","price":"83.92","priceCurrency":"USD"},{"@type":"Offer","name":"Creator Monthly","price":"39.99","priceCurrency":"USD"},{"@type":"Offer","name":"Creator Yearly","price":"350","priceCurrency":"USD"},{"@type":"Offer","name":"Angel Monthly","price":"99","priceCurrency":"USD"},{"@type":"Offer","name":"Angel Yearly","price":"999","priceCurrency":"USD"}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://tarosyn.com/#organization","name":"Tarosyn","url":"https://tarosyn.com/","logo":"https://tarosyn.com/assets/tarosyn-icon.png","email":"joseph@tarosyn.com","sameAs":["https://www.instagram.com/tarosynapp/","https://www.tiktok.com/@tarosynapp","https://x.com/tarosynapp"]},{"@type":"WebSite","@id":"https://tarosyn.com/#website","url":"https://tarosyn.com/","name":"Tarosyn","publisher":{"@id":"https://tarosyn.com/#organization"},"inLanguage":"en"},{"@type":"SoftwareApplication","name":"Tarosyn","url":"https://tarosyn.app","applicationCategory":"LifestyleApplication","operatingSystem":"Web","description":"Personalized tarot and astrology readings shaped by your birth chart, past cards, and reflections.","offers":[{"@type":"Offer","name":"Free","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Mystic Monthly","price":"9.99","priceCurrency":"USD"},{"@type":"Offer","name":"Mystic Yearly","price":"83.92","priceCurrency":"USD"},{"@type":"Offer","name":"Creator Monthly","price":"39.99","priceCurrency":"USD"},{"@type":"Offer","name":"Creator Yearly","price":"350","priceCurrency":"USD"},{"@type":"Offer","name":"Angel Monthly","price":"99","priceCurrency":"USD"},{"@type":"Offer","name":"Angel Yearly","price":"999","priceCurrency":"USD"}]}]}</script>
   <link rel="preload" href="/assets/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/tarosyn-mobile-cards.webp" as="image" type="image/webp" fetchpriority="high">
   <script>document.documentElement.classList.add("js")</script>
-  <link rel="stylesheet" href="styles.css?v=6">
+  <link rel="stylesheet" href="styles.css?v=7">
+  <script async src="/assets/analytics.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -76,6 +77,8 @@
             <li>No card required</li>
             <li>About 90 seconds</li>
           </ul>
+          <!-- App stores: not live yet. At launch, replace each pill with the official badge artwork and link to the store listing. -->
+          <p class="store-pills" aria-label="Native apps"><span class="store-pill" data-store="ios">App Store · coming soon</span><span class="store-pill" data-store="android">Google Play · coming soon</span></p>
         </div>
 
         <div class="hero-visual reveal reveal-delay" aria-label="Tarosyn tarot cards in a cosmic birth-chart setting">
@@ -178,13 +181,18 @@
         <div>
           <p class="eyebrow amber">THE FIRST CIRCLE IS FORMING</p>
           <h2 class="section-title">Early access. Honest proof.</h2>
-          <p class="section-lede">Tarosyn is opening its first circle, so you won’t find manufactured star counts or anonymous praise here. See the product, try a reading for free, and decide from your own experience.</p>
+          <p class="section-lede">Tarosyn is opening its first circle, so you won’t find manufactured star counts here—just a few words from early seekers. See the product, try a reading for free, and decide from your own experience.</p>
         </div>
         <div class="trust-list">
           <article><strong>Try before you pay</strong><span>Your first experience is free and requires no card.</span></article>
           <article><strong>Built in public</strong><span>Read the living product charter and current priorities.</span><a href="project.html">View project record →</a></article>
           <article><strong>Reflective, not absolute</strong><span>Tarosyn supports self-inquiry. It never promises supernatural certainty.</span></article>
         </div>
+      </div>
+      <!-- Owner-supplied quotes from real early seekers (first names only, wording preserved). -->
+      <div class="shell testimonial-grid" aria-label="What early seekers say">
+        <figure class="testimonial reveal"><blockquote><p>It’s really the best way to keep up with myself.</p></blockquote><figcaption>Demi</figcaption></figure>
+        <figure class="testimonial reveal reveal-delay"><blockquote><p>The insights I get are really breathtaking.</p></blockquote><figcaption>Rachel</figcaption></figure>
       </div>
     </section>
 
@@ -266,7 +274,7 @@
 
   <footer>
     <div class="shell footer-grid">
-      <div class="footer-brand"><a class="brand" href="#top"><picture><source type="image/webp" srcset="assets/tarosyn-icon-84.webp"><img decoding="async" src="assets/tarosyn-icon-84.png" alt="" width="42" height="42" loading="lazy"></picture><span>TAROSYN</span></a><p>Tarot that remembers you. A personal practice shaped by your chart, your cards, and your reflections.</p><div class="social-links"><a href="https://www.instagram.com/tarosynapp/">Instagram</a><a href="https://x.com/Tarosynapp">X</a><a href="https://www.tiktok.com/@tarosynapp">TikTok</a></div></div>
+      <div class="footer-brand"><a class="brand" href="#top"><picture><source type="image/webp" srcset="assets/tarosyn-icon-84.webp"><img decoding="async" src="assets/tarosyn-icon-84.png" alt="" width="42" height="42" loading="lazy"></picture><span>TAROSYN</span></a><p>Tarot that remembers you. A personal practice shaped by your chart, your cards, and your reflections.</p><div class="social-links" aria-label="Tarosyn on social media"><span class="social-handle">@tarosynapp</span><a href="https://www.instagram.com/tarosynapp/">Instagram</a><a href="https://x.com/tarosynapp">X</a><a href="https://www.tiktok.com/@tarosynapp">TikTok</a></div><!-- App stores: swap for official badges + store links at launch. --><p class="store-pills store-pills-footer"><span class="store-pill" data-store="ios">App Store · coming soon</span><span class="store-pill" data-store="android">Google Play · coming soon</span></p></div>
       <div><h3>Explore</h3><a href="#how-it-works">How it works</a><a href="#why-tarosyn">Why Tarosyn</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
           <a href="https://tarosyn.app/wiki">Wiki</a></div>
       <div><h3>Tarosyn</h3><a href="https://tarosyn.app">Enter the app</a><a href="https://tarosyn.app/login">Sign in</a><a href="project.html">Project record</a><a href="mailto:joseph@tarosyn.com">Contact</a></div>
@@ -276,6 +284,6 @@
   </footer>
 
   <a class="mobile-cta" data-cta="mobile-sticky" href="https://tarosyn.app"><span>Start free</span><small>No card required</small></a>
-  <script src="script.js?v=6" defer></script>
+  <script src="script.js?v=7" defer></script>
 </body>
 </html>

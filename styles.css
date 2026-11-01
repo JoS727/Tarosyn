@@ -2184,3 +2184,111 @@ footer {
     animation: none;
   }
 }
+
+
+/* Early-seeker testimonials (owner-supplied, real quotes) */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 32px);
+  margin-top: clamp(48px, 6vw, 72px);
+}
+
+.testimonial {
+  position: relative;
+  margin: 0;
+  padding: 64px clamp(24px, 3vw, 36px) clamp(24px, 3vw, 32px);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: linear-gradient(160deg, rgba(189, 146, 255, 0.08), rgba(239, 200, 121, 0.04));
+}
+
+.testimonial::before {
+  content: "\201C";
+  position: absolute;
+  top: 14px;
+  left: clamp(20px, 3vw, 32px);
+  color: var(--gold);
+  font: 700 4rem/1 var(--serif);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.testimonial blockquote {
+  margin: 0;
+}
+
+.testimonial blockquote p {
+  margin: 0;
+  color: #f3e9f7;
+  font: 600 clamp(1.15rem, 1.8vw, 1.4rem)/1.45 var(--serif);
+}
+
+.testimonial figcaption {
+  margin-top: 18px;
+  color: var(--gold-bright);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.testimonial figcaption::before {
+  content: "— ";
+  color: var(--muted);
+}
+
+/* "Coming soon" app-store pills (swap for official badges at launch) */
+.store-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0 0;
+}
+
+.store-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.store-pills-footer {
+  margin-top: 16px;
+}
+
+.social-links {
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.social-handle {
+  color: var(--gold-bright);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+@media (max-width: 860px) {
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero-copy .store-pills {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .store-pill {
+    padding: 0 11px;
+    font-size: 0.7rem;
+  }
+}
