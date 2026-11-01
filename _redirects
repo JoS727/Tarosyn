@@ -2,3 +2,7 @@
 # Make it reachable from the marketing domain without a native copy here.
 /wiki       https://tarosyn.app/wiki          302
 /wiki/*     https://tarosyn.app/wiki/:splat   302
+
+# The app (tarosyn.app) share tags point at these legacy root paths on tarosyn.com.
+/og-image.png       /assets/og-image.jpg     301
+/tarosyn-icon.png   /assets/icon-512.png     301
