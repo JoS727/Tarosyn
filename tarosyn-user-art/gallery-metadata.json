@@ -1,0 +1,262 @@
+[
+  {
+    "id": 125,
+    "cardType": "archetype",
+    "cardTypeLabel": "Soul Archetype",
+    "title": null,
+    "ownerUserId": null,
+    "imageUrl": "/objects/archetype-cards/19920/1785728792778.png",
+    "imagePath": null,
+    "createdAt": null
+  },
+  {
+    "id": 117,
+    "cardType": "archetype",
+    "cardTypeLabel": "Soul Archetype",
+    "title": null,
+    "ownerUserId": null,
+    "imageUrl": "/objects/archetype-cards/19449/1785301791108.png",
+    "imagePath": null,
+    "createdAt": null
+  },
+  {
+    "id": 108,
+    "cardType": "archetype",
+    "cardTypeLabel": "Soul Archetype",
+    "title": null,
+    "ownerUserId": null,
+    "imageUrl": "/objects/archetype-cards/18933/1782983055846.png",
+    "imagePath": null,
+    "createdAt": null
+  },
+  {
+    "id": 126,
+    "cardType": "hero",
+    "cardTypeLabel": "Hero Card",
+    "title": null,
+    "ownerUserId": null,
+    "imageUrl": "/objects/hero-cards/19920/1785728820041.png",
+    "imagePath": null,
+    "createdAt": null
+  },
+  {
+    "id": 123,
+    "cardType": "hero",
+    "cardTypeLabel": "Hero Card",
+    "title": null,
+    "ownerUserId": null,
+    "imageUrl": "/objects/hero-cards/18933/1785627875315.png",
+    "imagePath": null,
+    "createdAt": null
+  },
+  {
+    "id": 120,
+    "cardType": "blueprint",
+    "cardTypeLabel": "Cosmic Blueprint",
+    "title": null,
+    "ownerUserId": null,
+    "imageUrl": "/objects/pool/blueprint/Cancer/1782026472064-muwkb4.png",
+    "imagePath": null,
+    "createdAt": null
+  },
+  {
+    "id": 115,
+    "cardType": "blueprint",
+    "cardTypeLabel": "Cosmic Blueprint",
+    "title": null,
+    "ownerUserId": null,
+    "imageUrl": "/objects/pool/blueprint/Cancer/1779577382892-g3xrtz.png",
+    "imagePath": null,
+    "createdAt": null
+  },
+  {
+    "id": 109,
+    "cardType": "blueprint",
+    "cardTypeLabel": "Cosmic Blueprint",
+    "title": null,
+    "ownerUserId": null,
+    "imageUrl": "/objects/pool/blueprint/Sagittarius/1773000273542-ujm5fj.png",
+    "imagePath": null,
+    "createdAt": null
+  },
+  {
+    "id": 105,
+    "cardType": "blueprint",
+    "cardTypeLabel": "Cosmic Blueprint",
+    "title": null,
+    "ownerUserId": null,
+    "imageUrl": "/objects/pool/blueprint/Cancer/1779577354435-dxtipj.png",
+    "imagePath": null,
+    "createdAt": null
+  },
+  {
+    "id": 103,
+    "cardType": "blueprint",
+    "cardTypeLabel": "Cosmic Blueprint",
+    "title": null,
+    "ownerUserId": null,
+    "imageUrl": "/objects/pool/blueprint/Leo/1772999835378-ek2n5w.png",
+    "imagePath": null,
+    "createdAt": null
+  },
+  {
+    "id": 101,
+    "cardType": "blueprint",
+    "cardTypeLabel": "Cosmic Blueprint",
+    "title": null,
+    "ownerUserId": null,
+    "imageUrl": "/objects/pool/blueprint/Cancer/1773288564076-s2oblj.png",
+    "imagePath": null,
+    "createdAt": null
+  },
+  {
+    "id": 107,
+    "cardType": "corePattern",
+    "cardTypeLabel": "corePattern",
+    "title": null,
+    "ownerUserId": null,
+    "imageUrl": "/objects/core-pattern-cards/18933/1782835175656.png",
+    "imagePath": null,
+    "createdAt": null
+  },
+  {
+    "id": 124,
+    "cardType": "hero",
+    "cardTypeLabel": "Hero Card",
+    "title": null,
+    "ownerUserId": null,
+    "imageUrl": "/objects/hero-cards/18933/1785627876517.png",
+    "imagePath": null,
+    "createdAt": null
+  },
+  {
+    "id": 122,
+    "cardType": "hero",
+    "cardTypeLabel": "Hero Card",
+    "title": null,
+    "ownerUserId": null,
+    "imageUrl": "/objects/pool/heroback/generic/1785442389489-v1v3oy.png",
+    "imagePath": null,
+    "createdAt": null
+  },
+  {
+    "id": 121,
+    "cardType": "hero",
+    "cardTypeLabel": "Hero Card",
+    "title": null,
+    "ownerUserId": null,
+    "imageUrl": "/objects/pool/heroback/generic/1785174214878-r0p96j.png",
+    "imagePath": null,
+    "createdAt": null
+  },
+  {
+    "id": 119,
+    "cardType": "hero",
+    "cardTypeLabel": "Hero Card",
+    "title": null,
+    "ownerUserId": null,
+    "imageUrl": "/objects/pool/heroback/generic/1784396835708-frcukx.png",
+    "imagePath": null,
+    "createdAt": null
+  },
+  {
+    "id": 118,
+    "cardType": "hero",
+    "cardTypeLabel": "Hero Card",
+    "title": null,
+    "ownerUserId": null,
+    "imageUrl": "/objects/pool/heroback/generic/1784358220743-1aw5ys.png",
+    "imagePath": null,
+    "createdAt": null
+  },
+  {
+    "id": 116,
+    "cardType": "hero",
+    "cardTypeLabel": "Hero Card",
+    "title": null,
+    "ownerUserId": null,
+    "imageUrl": "/objects/pool/heroback/generic/1784249915055-c4yy6l.png",
+    "imagePath": null,
+    "createdAt": null
+  },
+  {
+    "id": 114,
+    "cardType": "hero",
+    "cardTypeLabel": "Hero Card",
+    "title": null,
+    "ownerUserId": null,
+    "imageUrl": "/objects/pool/heroback/generic/1784014131241-40oeek.png",
+    "imagePath": null,
+    "createdAt": null
+  },
+  {
+    "id": 113,
+    "cardType": "hero",
+    "cardTypeLabel": "Hero Card",
+    "title": null,
+    "ownerUserId": null,
+    "imageUrl": "/objects/pool/heroback/generic/1783913611072-npt5f2.png",
+    "imagePath": null,
+    "createdAt": null
+  },
+  {
+    "id": 112,
+    "cardType": "hero",
+    "cardTypeLabel": "Hero Card",
+    "title": null,
+    "ownerUserId": null,
+    "imageUrl": "/objects/pool/heroback/generic/1782615857987-ohmezf.png",
+    "imagePath": null,
+    "createdAt": null
+  },
+  {
+    "id": 111,
+    "cardType": "hero",
+    "cardTypeLabel": "Hero Card",
+    "title": null,
+    "ownerUserId": null,
+    "imageUrl": "/objects/pool/heroback/generic/1782119516360-w7bxp1.png",
+    "imagePath": null,
+    "createdAt": null
+  },
+  {
+    "id": 110,
+    "cardType": "hero",
+    "cardTypeLabel": "Hero Card",
+    "title": null,
+    "ownerUserId": null,
+    "imageUrl": "/objects/pool/heroback/generic/1782098270206-kuammg.png",
+    "imagePath": null,
+    "createdAt": null
+  },
+  {
+    "id": 106,
+    "cardType": "hero",
+    "cardTypeLabel": "Hero Card",
+    "title": null,
+    "ownerUserId": null,
+    "imageUrl": "/objects/pool/heroback/generic/1781991188349-shu7ca.png",
+    "imagePath": null,
+    "createdAt": null
+  },
+  {
+    "id": 104,
+    "cardType": "hero",
+    "cardTypeLabel": "Hero Card",
+    "title": null,
+    "ownerUserId": null,
+    "imageUrl": "/objects/pool/heroback/generic/1781965995278-0x1ev5.png",
+    "imagePath": null,
+    "createdAt": null
+  },
+  {
+    "id": 102,
+    "cardType": "hero",
+    "cardTypeLabel": "Hero Card",
+    "title": null,
+    "ownerUserId": null,
+    "imageUrl": "/objects/pool/heroback/generic/1781940775220-fs3728.png",
+    "imagePath": null,
+    "createdAt": null
+  }
+]
