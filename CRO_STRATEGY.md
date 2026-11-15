@@ -71,15 +71,17 @@ The primary CTA is a low-friction behavior, not a subscription commitment. Prici
 
 ## Mystic pricing decision
 
-- **U.S. list price:** `$7.99/month`
-- **Annual anchor:** `$59.99/year`, equivalent to about `$5/month`
-- **Annual saving:** `37%` versus twelve Mystic monthly payments (`$95.88`)
+> Updated 2026-10-19 to match the live app (`shared/contracts/tiers.ts` and the tier-settings defaults in Tarosyn-Production). The earlier $7.99 / $59.99 proposal was superseded on 2026-09-14.
 
-The $7.99 price is intentionally one step below the dominant $9.99 North American monthly subscription anchor. It keeps Mystic accessible enough to convert spiritually curious users who are not ready for a premium commitment, while avoiding the volume-dependent economics of the roughly $6.67 low-price cohort.
+- **U.S. list price:** `$9.99/month`
+- **Annual anchor:** `$83.92/year`, equivalent to about `$7/month`
+- **Annual saving:** `30%` versus twelve Mystic monthly payments (`$119.88`)
 
-The market context supports this position: RevenueCat reports a $9.99 North American monthly median and a $6.67 median for low-priced apps; Labyrinthos lists a $9.99 monthly tarot subscription; and CHANI lists premium at $11.99 monthly. Mystic therefore enters below the clearest direct substitutes without signaling a disposable or ad-supported product.
+Full lineup shown on the landing page: Seeker/Free `$0`, Mystic `$9.99` (100 Kuu$/mo), Creator `$39.99` or `$350/yr` (400 Kuu$/mo), Angel `$99` or `$999/yr` (1,000 Kuu$/mo). Retired tiers (Seer, Founder, Grand Master) are honored as aliases in the app and must not be marketed.
 
-At standard payment costs, $7.99 leaves approximately `$6.79` after a 15% app-store fee or `$7.46` after Stripe's 2.9% + 30¢ U.S. online-card fee, before taxes, AI inference, support, and other variable costs. Monitor first-reading-to-paid conversion, first monthly renewal, refund rate, and contribution margin before testing a lower price.
+Mystic sits at the dominant $9.99 North American monthly anchor: RevenueCat reports a $9.99 North American monthly median and a $6.67 median for low-priced apps; Labyrinthos lists a $9.99 monthly tarot subscription; and CHANI lists premium at $11.99 monthly. The annual plan does the "below the substitutes" work instead of the monthly price.
+
+At standard payment costs, $9.99 leaves approximately `$8.49` after a 15% app-store fee or `$9.40` after Stripe's 2.9% + 30¢ U.S. online-card fee, before taxes, AI inference, support, and other variable costs. Monitor first-reading-to-paid conversion, first monthly renewal, refund rate, and contribution margin before testing a different price.
 
 Sources: [RevenueCat State of Subscription Apps 2026](https://www.revenuecat.com/state-of-subscription-apps-2026-utilities), [Labyrinthos App Store listing](https://labyrinthos.app/), [CHANI pricing](https://chaninicholas.zendesk.com/hc/en-us/articles/1500001732281-App-Pricing), [Apple Small Business Program](https://developer.apple.com/app-store/small-business-program/), [Google Play service fees](https://support.google.com/googleplay/android-developer/answer/112622), and [Stripe pricing](https://stripe.com/pricing).
 
@@ -144,7 +146,7 @@ Recommended testimonial prompts:
 ## Interaction and responsive guidance
 
 - The page is mobile-first from 320px upward, with a full-screen accessible mobile menu and a thumb-reachable sticky CTA below 620px.
-- Content stacks in decision order on smaller screens; the free plan remains first, followed by annual value and monthly flexibility.
+- Content stacks in decision order on smaller screens; the free plan remains first, followed by Mystic, Creator, and Angel (four cards; 2×2 on mid-width screens, one column on mobile).
 - Reveal animations run once, use short travel distances, and respect `prefers-reduced-motion`.
 - CTA hover/tap feedback is tactile but does not create motion that competes with the copy.
 - FAQ items use native `details` elements for keyboard behavior and graceful no-JavaScript fallback.

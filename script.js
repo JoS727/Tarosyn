@@ -63,5 +63,8 @@ document.querySelectorAll('[data-cta]').forEach((cta) => {
     const detail = { position: cta.dataset.cta, destination: cta.href };
     window.dispatchEvent(new CustomEvent('tarosyn:cta', { detail }));
     window.dataLayer?.push({ event: 'cta_click', cta_position: detail.position });
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'cta_click', { cta: detail.position, link_url: detail.destination });
+    }
   });
 });
