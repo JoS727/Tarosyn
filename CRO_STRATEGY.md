@@ -77,7 +77,7 @@ The primary CTA is a low-friction behavior, not a subscription commitment. Prici
 - **Annual anchor:** `$83.92/year`, equivalent to about `$7/month`
 - **Annual saving:** `30%` versus twelve Mystic monthly payments (`$119.88`)
 
-Full lineup shown on the landing page: Seeker/Free `$0`, Mystic `$9.99` (100 Kuu$/mo), Creator `$39.99` or `$350/yr` (400 Kuu$/mo), Angel `$99` or `$999/yr` (1,000 Kuu$/mo). Retired tiers (Seer, Founder, Grand Master) are honored as aliases in the app and must not be marketed.
+Full lineup shown on the landing page: Seeker/Free `$0`, Mystic `$9.99` (100 Kuu$/mo), Creator `$39.99` or `$350/yr` (400 Kuu$/mo), Angel `$99` or `$999/yr` (1,000 Kuu$/mo). Seer is an active, marketed tier at $9.99/month ($83.99/yr) — **Stripe is the source of truth for prices** and the landing page, Terms and Subscription Terms were aligned to it on 2026-11-20. Retired tiers (Founder, Grand Master) remain honored as aliases in the app and must not be marketed.
 
 Mystic sits at the dominant $9.99 North American monthly anchor: RevenueCat reports a $9.99 North American monthly median and a $6.67 median for low-priced apps; Labyrinthos lists a $9.99 monthly tarot subscription; and CHANI lists premium at $11.99 monthly. The annual plan does the "below the substitutes" work instead of the monthly price.
 
