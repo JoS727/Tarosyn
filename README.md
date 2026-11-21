@@ -18,6 +18,9 @@ Deploy this repository directly to the static host used by `tarosyn.com` so the 
 - `CRO_STRATEGY.md` — conversion rationale, section psychology, CTA measurement plan, claim guardrails, and experiment backlog
 - `assets/` — local Tarosyn brand assets copied from the app's public asset library
 - `robots.txt` and `sitemap.xml` — crawler discovery for `tarosyn.com`
+- `llms.txt` — one-file summary, pricing and page map for AI answer engines
+- `what-is-tarosyn/` — canonical description page (definition, pricing, platforms, FAQ) written to be quotable
+- `compare/` — comparison hub plus `compare/co-star/` and `compare/the-pattern/`, each describing the competitor only through its own published positioning
 - `site.webmanifest` — browser/app identity metadata
 - `404.html` — branded not-found page
 - `_redirects` — Cloudflare Pages redirects (`/wiki` → `tarosyn.app/wiki`)
@@ -31,7 +34,7 @@ Deploy this repository directly to the static host used by `tarosyn.com` so the 
 
 ## Pricing source of truth
 
-Plan names, prices, and Kuu$ allowances on this site must match the app (`JoS727/Tarosyn-Production`: `shared/contracts/tiers.ts` and the tier-settings defaults in `server/routes.ts`). Live tiers: Seeker (free), Mystic, Creator, Angel. Seer, Founder, and Grand Master are retired aliases and must not be marketed.
+Plan names, prices, and Kuu$ allowances on this site must match the app (`JoS727/Tarosyn-Production`: `shared/contracts/tiers.ts` and the tier-settings defaults in `server/routes.ts`). Live tiers, read from `GET /api/tier-settings` on 2026-11-20: Seeker (free, 0 Kuu$), Mystic ($4.99/mo, $25/yr, 40 Kuu$/mo), Seer ($9.99/mo, $83.99/yr, 100 Kuu$/mo), Creator ($29.99/mo, $219.99/yr, 400 Kuu$/mo), Angel ($99/mo, $999/yr, 1,000 Kuu$/mo). Retired aliases that must not be marketed: Founder, Grand Master.
 
 ## SEO and discovery
 

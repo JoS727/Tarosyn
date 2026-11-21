@@ -72,12 +72,14 @@ The primary CTA is a low-friction behavior, not a subscription commitment. Prici
 ## Mystic pricing decision
 
 > Updated 2026-10-19 to match the live app (`shared/contracts/tiers.ts` and the tier-settings defaults in Tarosyn-Production). The earlier $7.99 / $59.99 proposal was superseded on 2026-09-14.
+>
+> **Superseded again on 2026-11-20:** Mystic is now `$4.99/month` or `$25/year` in the live app and on the landing page, and the $9.99 slot is Seer. The figures in this dated block describe the October decision and no longer match the product — trust the lineup line below, or `GET /api/tier-settings`, not this list.
 
 - **U.S. list price:** `$9.99/month`
 - **Annual anchor:** `$83.92/year`, equivalent to about `$7/month`
 - **Annual saving:** `30%` versus twelve Mystic monthly payments (`$119.88`)
 
-Full lineup shown on the landing page: Seeker/Free `$0`, Mystic `$9.99` (100 Kuu$/mo), Creator `$39.99` or `$350/yr` (400 Kuu$/mo), Angel `$99` or `$999/yr` (1,000 Kuu$/mo). Seer is an active, marketed tier at $9.99/month ($83.99/yr) — **Stripe is the source of truth for prices** and the landing page, Terms and Subscription Terms were aligned to it on 2026-11-20. Retired tiers (Founder, Grand Master) remain honored as aliases in the app and must not be marketed.
+Full lineup shown on the landing page, read from `GET /api/tier-settings` on 2026-11-20: Seeker/Free `$0` (0 Kuu$/mo), Mystic `$4.99` or `$25/yr` (40 Kuu$/mo), Seer `$9.99` or `$83.99/yr` (100 Kuu$/mo), Creator `$29.99` or `$219.99/yr` (400 Kuu$/mo), Angel `$99` or `$999/yr` (1,000 Kuu$/mo). **The app's tier settings are the source of truth for prices and Kuu$ allowances**; the landing page, Terms and Subscription Terms were aligned to it on 2026-11-20 (the cards previously claimed 100 and 300 Kuu$ for Mystic and Seer, which is 2.5–3× what the app grants — a giveaway, not a typo to preserve). Retired tiers (Founder, Grand Master) remain honored as aliases in the app and must not be marketed.
 
 Mystic sits at the dominant $9.99 North American monthly anchor: RevenueCat reports a $9.99 North American monthly median and a $6.67 median for low-priced apps; Labyrinthos lists a $9.99 monthly tarot subscription; and CHANI lists premium at $11.99 monthly. The annual plan does the "below the substitutes" work instead of the monthly price.
 
